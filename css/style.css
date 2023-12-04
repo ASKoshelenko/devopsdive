@@ -533,7 +533,7 @@ textarea.form-control {
 	font-family: 'dosisregular', sans-serif;
 	font-size: 2rem;
 	letter-spacing: 1.7em;
-	color: rgba(254, 254, 254, .9);
+	color: rgba(0, 0, 0, .9);
 	text-transform: uppercase;
 	text-indent: 1.7em;
 	font-weight: normal;
@@ -546,9 +546,10 @@ textarea.form-control {
 }
 .inner-button{
 	position: absolute;
-	width: 20px;
-	height: 20px;
-	background-color: #fff;	
+	width: 30px;
+	height: 30px;
+	background-color: rgb(7, 149, 177);
+	opacity: 0.9;	
 	border-radius: 4px;
 	transform: rotate(-45deg);
 	bottom: 5%;
@@ -560,7 +561,7 @@ textarea.form-control {
 	bottom: 2px;
 	left: 4px;
 	transform: rotate(45deg);
-	font-size: 0.6667rem;
+	font-size: 1rem;
 }
 
 @media (max-width: 991px) {
@@ -743,7 +744,7 @@ blockquote span {
 	padding-bottom: 37px;
 }
 .lets-talk-img {
-	margin-top: 0px;
+	margin-top: 0;
 }
 .lets-talk .default-text {
 	/* белый цвет на 70% не прозрачный */
