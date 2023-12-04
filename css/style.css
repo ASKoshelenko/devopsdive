@@ -468,11 +468,15 @@ textarea.form-control {
 .logo {
 	font-family: 'open_sanssemibold', sans-serif;
 	float: left;
-	height: 18px;
+	height: 28px;
 	text-transform: uppercase;
-	font-size: 0.8rem;
+	font-size: 0.9rem;
 	letter-spacing: 0.3em;
 	color: #fff;
+}
+.logo :hover {
+	box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+	transition: all 0.15s ease-in-out;
 }
 .logo::after {
 	content: '';
@@ -484,10 +488,15 @@ textarea.form-control {
 .header-nav {
 	font-family: 'open_sansregular', sans-serif;
 	float: right;
-	color: rgba(255, 255, 255, .75);
+	color: rgba(0, 0, 0, 0.75);
 	text-transform: uppercase;
-	font-size: 0.7333rem;
+	font-size: 0.8rem;
 	letter-spacing: 0.3em;
+}
+.header-nav :hover {
+	box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+    transform: translateY(-3px);
+	transition: all 0.15s ease-in-out;
 }
 .header-nav li {
 	float: left;
@@ -546,10 +555,10 @@ textarea.form-control {
 }
 .inner-button{
 	position: absolute;
-	width: 30px;
-	height: 30px;
-	background-color: rgb(7, 149, 177);
-	opacity: 0.9;	
+	width: 20px;
+	height: 20px;
+	background-color: rgb(1, 1, 1);
+	opacity: 0.7;	
 	border-radius: 4px;
 	transform: rotate(-45deg);
 	bottom: 5%;
@@ -560,6 +569,7 @@ textarea.form-control {
 	position: absolute;
 	bottom: 2px;
 	left: 4px;
+	color: #f1f1f1;
 	transform: rotate(45deg);
 	font-size: 1rem;
 }
