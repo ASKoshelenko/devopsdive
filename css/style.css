@@ -570,6 +570,7 @@ textarea.form-control {
 	left: 4px;
 	transform: rotate(45deg);
 	font-size: 0.6667rem;
+	
 }
 @media (max-width: 991px) {
 	.inner-title{
