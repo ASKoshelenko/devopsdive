@@ -573,9 +573,12 @@ textarea.form-control {
 .header-nav {
     font-family: 'open_sansregular', sans-serif;
     float: right;
-    color: rgba(246, 242, 242, 0.75);
+    color: rgb(255, 255, 255);
+    /* color: rgba(246, 242, 242, 0.75); */
     text-transform: uppercase;
-    font-size: 0.8rem;
+    /* font-size: 0.8rem; */
+    font-size: 0.9rem;
+    font-weight: bolder;
     letter-spacing: 0.3em;
 }
 
@@ -587,6 +590,7 @@ textarea.form-control {
 
 .header-nav li {
     float: left;
+    text-shadow: 2px 2px 1px #000000;
 }
 
 .header-nav li+li {
@@ -637,31 +641,33 @@ textarea.form-control {
 
 .inner-title {
     font-family: 'dosisregular', sans-serif;
-    /* font-size: 2rem; */
-    font-size: 3rem;
+    font-size: 0rem;
+    /* font-size: 3rem; */
     letter-spacing: 0.2em;
     /* letter-spacing: 1.7em; */
-    color: rgb(10, 10, 10);
-    /* color: rgba(254, 254, 254, .9); */
+    /* color: rgb(10, 10, 10); */
+    color: rgba(254, 254, 254, .9);
     text-transform: uppercase;
     text-indent: 1.7em;
     font-weight: bold;
     margin-bottom: -80px;
-    margin-left: -70px;
+    /* margin-left: -70px; */
 }
 
 .inner-subtitle {
     font-family: 'open_sanslight', sans-serif;
-    font-size: 1.2667rem;
-    color: rgb(10, 10, 10);
-    /* color: rgba(254, 254, 254, .68) */
+    font-size: 0rem;
+    /* font-size: 1.2667rem; */
+    /* color: rgb(10, 10, 10); */
+    color: rgba(254, 254, 254, .68)
 }
 
 .inner-button {
     position: absolute;
     width: 20px;
     height: 20px;
-    background-color: #fff;
+    /* background-color: #fff; */
+    background-color: #2a4658;
     border-radius: 4px;
     transform: rotate(-45deg);
     bottom: 5%;
