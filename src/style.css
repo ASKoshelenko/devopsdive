@@ -903,12 +903,34 @@ button:focus {
   padding-bottom: 30px !important;
   background-image: var(--section-background-color) !important;
   color: white !important;
+  z-index: 1;
+}
+
+.resume-section .container {
+  position: relative;
+  z-index: 10; /* Высокий z-index для контейнера */
+}
+
+.resume-section .tsparticles-canvas-el,
+#tsparticles canvas {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  pointer-events: none !important; /* Ключевое свойство - игнорировать события мыши */
+  z-index: 0 !important; /* Низкий z-index */
+}
+
+.resume-section .btn {
+  position: relative !important;
+  z-index: 15 !important; /* Высокий z-index для кнопок */
+  pointer-events: auto !important; /* Явное указание обрабатывать события */
 }
 
 .resume {
   padding-top: 50px;
   padding-bottom: 50px;
   justify-content: center;
+  z-index: 5; 
 }
 
 .resume-left {
