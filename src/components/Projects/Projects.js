@@ -118,7 +118,7 @@ function Projects() {
         "Container Security",
         "Microservices"
       ],
-      ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/feature/project_reworking/devopsdive/GKE%20Migration%20Project.md",
+      ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/main/devopsdive/GKE%20Migration%20Project.md",
     },
     {
       type: 'project',
@@ -133,7 +133,7 @@ function Projects() {
         "Terraform",
         "Cost Optimization"
       ],
-      ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/feature/project_reworking/devopsdive/Azure%20Infrastructure%20Project.md",
+      ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/main/devopsdive/Azure%20Infrastructure%20Project.md",
     },
     {
       type: 'project',
@@ -148,7 +148,7 @@ function Projects() {
         "High Availability",
         "Security"
       ],
-      ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/feature/project_reworking/devopsdive/AWS%20Lambda%20Migration%20%26%20Security%20Enhancement.md",
+      ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/main/devopsdive/AWS%20Lambda%20Migration%20%26%20Security%20Enhancement.md",
     },
     {
       type: 'project',
@@ -163,7 +163,7 @@ function Projects() {
         "Networking",
         "Security"
       ],
-      ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/feature/project_reworking/devopsdive/IT%20Marathon.md",
+      ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/main/devopsdive/IT%20Marathon.md",
     },
     {
       type: 'project',
@@ -195,7 +195,7 @@ function Projects() {
         "Docker",
         "Microservices"
       ],
-      ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/feature/project_reworking/devopsdive/GCP%20Kubernetes%20Infrastructure%20Project.md",
+      ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/main/devopsdive/GCP%20Kubernetes%20Infrastructure%20Project.md",
     },
     {
       type: 'project',
@@ -227,7 +227,7 @@ function Projects() {
         "GitHub Actions",
         "GitLab CI"
       ],
-      ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/feature/project_reworking/devopsdive/Enterprise%20E-Commerce%20CICD%20Pipeline.md",
+      ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/main/devopsdive/Enterprise%20E-Commerce%20CICD%20Pipeline.md",
     },
     {
       type: 'project',
@@ -257,7 +257,7 @@ function Projects() {
       "High Availability",
       "Load Balancing"
     ],
-    ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/feature/project_reworking/devopsdive/Nginx%20Configuration%20and%20SSL%20Implementation.md",
+    ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/main/devopsdive/Nginx%20Configuration%20and%20SSL%20Implementation.md",
   },
 
   // Monitoring & Reliability Projects
@@ -274,7 +274,7 @@ function Projects() {
       "Performance",
       "Alerting"
     ],
-    ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/feature/project_reworking/devopsdive/Enterprise%20Monitoring%20Solution%20Project.md",
+    ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/main/devopsdive/Enterprise%20Monitoring%20Solution%20Project.md",
   },
 
   // Cloud Services & Integration Projects
@@ -291,7 +291,7 @@ function Projects() {
       "High Availability",
       "Azure Monitor"
     ],
-    ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/feature/project_reworking/devopsdive/Commercetools%20Data%20Backup%20Solution.md",
+    ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/main/devopsdive/Commercetools%20Data%20Backup%20Solution.md",
   },
   // Git & Version Control Projects
   {
@@ -307,7 +307,7 @@ function Projects() {
       "Access Management",
       "High Availability"
     ],
-    ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/feature/project_reworking/devopsdive/Cross-Platform%20Git%20Synchronization%20Solution.md",
+    ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/main/devopsdive/Cross-Platform%20Git%20Synchronization%20Solution.md",
   },
   {
     type: 'project',
@@ -338,7 +338,7 @@ function Projects() {
       "Infrastructure as Code",
       "Service Mesh"
     ],
-    ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/feature/project_reworking/devopsdive/MACH%20Composer%20Automation%20Platform.md",
+    ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/main/devopsdive/MACH%20Composer%20Automation%20Platform.md",
   },
 
   // Web Development Projects (если они нужны в портфолио)
