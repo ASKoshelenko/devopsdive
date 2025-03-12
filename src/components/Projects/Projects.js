@@ -88,8 +88,8 @@ function Projects() {
 
   // const projectTypes = ['all', 'project', 'task'];
 
-  // Projects data moved inside the component
-  const ITEMS_DATA = [
+  // Projects data wrapped in useMemo to prevent recreation on each render
+  const ITEMS_DATA = useMemo(() => [
     {
       type: 'project',
       imgPath: azure,
@@ -407,7 +407,7 @@ function Projects() {
     skills: ["React", "REST API", "GitHub API"],
     ghLink: "https://github.com/ASKoshelenko/react_githubSearch#readme",
   }
-];
+], [t]);
 
   const hasSkillsFromCategory = (projectSkills, category) => {
     return projectSkills.some(skill => CATEGORIES[category]?.includes(skill));
@@ -421,12 +421,13 @@ function Projects() {
       
       return matchesType && matchesCategory && matchesSkill;
     });
-  }, [selectedType, selectedCategory, selectedSkill]);
+  }, [selectedType, selectedCategory, selectedSkill, ITEMS_DATA]);
 
-  const handleTypeClick = (type) => {
-    setSelectedType(type);
-    setSelectedSkill(null);
-  };
+  // Удаляем неиспользуемую функцию handleTypeClick
+  // const handleTypeClick = (type) => {
+  //   setSelectedType(type);
+  //   setSelectedSkill(null);
+  // };
 
   const handleCategoryClick = (category) => {
     setSelectedCategory(category === selectedCategory ? null : category);
