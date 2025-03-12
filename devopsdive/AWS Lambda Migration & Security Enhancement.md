@@ -3,7 +3,7 @@
 ## Project Overview
 
 ### 🚩 Situation
-When our company decided to upgrade Python versions for our AWS Lambda functions, I faced several challenges due to my limited experience at that time:
+When our team decided to upgrade Python versions for our AWS Lambda functions, I faced several challenges due to my limited experience at that time:
 - Over 50 Lambda functions running outdated Python 3.6.
 - Manual testing and deployments leading to frequent mistakes.
 - No clear security practices or standards implemented.
