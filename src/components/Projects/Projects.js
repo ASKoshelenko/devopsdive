@@ -104,7 +104,7 @@ function Projects() {
         "Container Security",
         "Microservices"
       ],
-      ghLink: "",
+      ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/feature/project_reworking/devopsdive/GKE%20Migration%20Project.md",
     },
     {
       type: 'project',
@@ -119,7 +119,7 @@ function Projects() {
         "Terraform",
         "Cost Optimization"
       ],
-      ghLink: "",
+      ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/feature/project_reworking/devopsdive/Azure%20Infrastructure%20Project.md",
     },
     {
       type: 'project',
