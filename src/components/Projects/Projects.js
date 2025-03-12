@@ -21,7 +21,7 @@ import proxmox from "../../Assets/Projects/proxmox.png";
 import gke from "../../Assets/Projects/gke.png";
 import mach from "../../Assets/Projects/mach.png";
 import mirroring from "../../Assets/Projects/mirroring.png";
-// import canary from "../../Assets/Projects/canary.png";
+import commercetools from "../../Assets/Projects/commercetools.png";
 import logicapp from "../../Assets/Projects/logicapp.png";
 import monitoring from "../../Assets/Projects/monitoring.png";
 import cicd from "../../Assets/Projects/cicd.png";
@@ -29,6 +29,8 @@ import gcpkube from "../../Assets/Projects/gcpkube.png";
 import marathon from "../../Assets/Projects/marathon.png";
 import lambda from "../../Assets/Projects/lambda.png";
 import azure from "../../Assets/Projects/azure.png";
+import import_data from "../../Assets/Projects/import_data.png";
+import logs_img from "../../Assets/Projects/logs.png";
 
 // DevOps categories with their respective skills
 const CATEGORIES = {
@@ -96,6 +98,52 @@ function Projects() {
 
   // Projects data wrapped in useMemo to prevent recreation on each render
   const ITEMS_DATA = useMemo(() => [
+    {
+      type: 'project',
+      imgPath: import_data,
+      title: t('project_import_automation_title'),
+      description: t('project_import_automation_description'),
+      skills: [
+        "Azure",
+        "Bash",
+        "Cloud Architecture",
+        "Security",
+        "CI/CD"
+      ],
+      ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/main/devopsdive/Automated%20Import%20Job%20Trigger%20Tool.md",
+    },
+    
+    {
+      type: 'project',
+      imgPath: logs_img, // Или другое подходящее изображение
+      title: t('project_logs_viewer_title'),
+      description: t('project_logs_viewer_description'),
+      skills: [
+        "Monitoring",
+        "Elastic",
+        "Azure",
+        "Docker",
+        "Python",
+        "Web Development"
+      ],
+      ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/main/devopsdive/eShop%20Logs%20viewer%20application.md",
+    },
+    
+    {
+      type: 'project',
+      imgPath: commercetools, // Или другое подходящее изображение
+      title: t('project_api_clients_tool_title'),
+      description: t('project_api_clients_tool_description'),
+      skills: [
+        "Python",
+        "Security",
+        "API Design",
+        "Cloud Architecture",
+        "Docker",
+        "Monitoring"
+      ],
+      ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/main/devopsdive/Commercetools%20Unused%20API%20Clients%20Tool.md",
+    },
     {
       type: 'project',
       imgPath: marathon,
