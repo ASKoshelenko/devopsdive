@@ -98,6 +98,36 @@ function Projects() {
   const ITEMS_DATA = useMemo(() => [
     {
       type: 'project',
+      imgPath: marathon,
+      title: t('project_terraform_infrastructure_title'),
+      description: t('project_terraform_infrastructure_description'),
+      skills: [
+        "Infrastructure as Code",
+        "Terraform",
+        "High Availability",
+        "Cloud Architecture",
+        "Networking",
+        "Security"
+      ],
+      ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/main/devopsdive/IT%20Marathon.md",
+    },
+      // MACH & Modern Architecture Projects
+    {
+      type: 'project',
+      imgPath: mach,
+      title: t('project_mach_deployment_title'),
+      description: t('project_mach_deployment_description'),
+      skills: [
+        "Microservices",
+        "GitHub Actions",
+        "Pipeline Automation",
+        "Infrastructure as Code",
+        "Service Mesh"
+      ],
+      ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/main/devopsdive/MACH%20Composer%20Automation%20Platform.md",
+    },
+    {
+      type: 'project',
       imgPath: azure,
       title: t('project_apim_title'),
       description: t('project_apim_description'),
@@ -110,19 +140,66 @@ function Projects() {
       ],
       ghLink: "https://github.com/ASKoshelenko/apim/tree/main#readme",
     },
+        // Automation & CI/CD Projects
     {
       type: 'project',
-      imgPath: gke,
-      title: t('project_gke_migration_title'),
-      description: t('project_gke_migration_description'),
+      imgPath: cicd,
+      title: t('project_bosch_cicd_title'),
+      description: t('project_bosch_cicd_description'),
       skills: [
-        "GCP",
-        "Cloud Architecture",
-        "Kubernetes",
-        "Containerization",
-        "Microservices"
+        "Jenkins",
+        "Pipeline Automation",
+        "CI/CD",
+        "GitHub Actions",
+        "GitLab CI"
       ],
-      ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/main/devopsdive/GKE%20Migration%20Project.md",
+      ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/main/devopsdive/Enterprise%20E-Commerce%20CICD%20Pipeline.md",
+    },
+    // Cloud Services & Integration Projects
+    {
+      type: 'project',
+      imgPath: logicapp,
+      title: t('project_commercetools_backup_title'),
+      description: t('project_commercetools_backup_description'),
+      skills: [
+        "Azure",
+        "Azure LogicApp",
+        "Cloud Architecture",
+        "High Availability",
+        "Monitoring"
+      ],
+      ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/main/devopsdive/Commercetools%20Data%20Backup%20Solution.md",
+    },
+    // Git & Version Control Projects
+    {
+      type: 'project',
+      imgPath: mirroring,
+      title: t('project_git_mirror_title'),
+      description: t('project_git_mirror_description'),
+      skills: [
+        "GitLab CI",
+        "Pipeline Automation",
+        "CI/CD",
+        "BitBucket",
+        "Security",
+        "High Availability",
+        "Version Control"
+      ],
+      ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/main/devopsdive/Cross-Platform%20Git%20Synchronization%20Solution.md",
+    },
+      // Monitoring & Reliability Projects
+    {
+      type: 'project',
+      imgPath: monitoring,
+      title: t('project_monitoring_platform_title'),
+      description: t('project_monitoring_platform_description'),
+      skills: [
+        "Prometheus",
+        "Grafana",
+        "Performance",
+        "Monitoring"
+      ],
+      ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/main/devopsdive/Enterprise%20Monitoring%20Solution%20Project.md",
     },
     {
       type: 'project',
@@ -140,47 +217,44 @@ function Projects() {
     },
     {
       type: 'project',
+      imgPath: git,
+      title: t('project_git_optimization_title'),
+      description: t('project_git_optimization_description'),
+      skills: [
+        "Version Control",
+        "GitLab CI",
+        "CI/CD",
+        "BitBucket",
+        "Pipeline Automation"
+      ],
+      ghLink: "",
+    },
+    {
+      type: 'project',
       imgPath: lambda,
       title: t('project_aws_lambda_title'),
       description: t('project_aws_lambda_description'),
       skills: [
         "AWS",
         "Serverless",
-        "Cloud Architecture",
-        "High Availability",
         "Security"
       ],
       ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/main/devopsdive/AWS%20Lambda%20Migration%20%26%20Security%20Enhancement.md",
     },
     {
       type: 'project',
-      imgPath: marathon,
-      title: t('project_terraform_infrastructure_title'),
-      description: t('project_terraform_infrastructure_description'),
+      imgPath: gke,
+      title: t('project_gke_migration_title'),
+      description: t('project_gke_migration_description'),
       skills: [
-        "Infrastructure as Code",
-        "Terraform",
-        "High Availability",
+        "GCP",
         "Cloud Architecture",
-        "Networking",
-        "Security"
+        "Kubernetes",
+        "Containerization",
+        "Microservices"
       ],
-      ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/main/devopsdive/IT%20Marathon.md",
+      ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/main/devopsdive/GKE%20Migration%20Project.md",
     },
-    {
-      type: 'project',
-      imgPath: proxmox,
-      title: t('project_proxmox_title'),
-      description: t('project_proxmox_description'),
-      skills: [
-        "Infrastructure as Code",
-        "High Availability",
-        "Networking",
-        "Proxmox"
-      ],
-      ghLink: "",
-    },
-  
     // Containerization Projects
     {
       type: 'project',
@@ -199,33 +273,27 @@ function Projects() {
     },
     {
       type: 'project',
+      imgPath: proxmox,
+      title: t('project_proxmox_title'),
+      description: t('project_proxmox_description'),
+      skills: [
+        "Infrastructure as Code",
+        "High Availability",
+        "Networking",
+        "Proxmox"
+      ],
+      ghLink: "",
+    },
+    {
+      type: 'project',
       imgPath: dockercompose,
       title: t('project_docker_compose_title'),
       description: t('project_docker_compose_description'),
       skills: [
         "Docker",
-        "Containerization",
-        "Microservices",
-        "Service Mesh"
+        "Containerization"
       ],
       ghLink: "",
-    },
-  
-    // Automation & CI/CD Projects
-    {
-      type: 'project',
-      imgPath: cicd,
-      title: t('project_bosch_cicd_title'),
-      description: t('project_bosch_cicd_description'),
-      skills: [
-        "Jenkins",
-        "Azure DevOps",
-        "Pipeline Automation",
-        "CI/CD",
-        "GitHub Actions",
-        "GitLab CI"
-      ],
-      ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/main/devopsdive/Enterprise%20E-Commerce%20CICD%20Pipeline.md",
     },
     {
       type: 'project',
@@ -237,8 +305,6 @@ function Projects() {
         "Pipeline Automation",
         "CI/CD",
         "Docker",
-        "GitLab CI",
-        "GitHub Actions"
       ],
       ghLink: "",
     },
@@ -256,88 +322,13 @@ function Projects() {
     ],
     ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/main/devopsdive/Nginx%20Configuration%20and%20SSL%20Implementation.md",
   },
-
-  // Monitoring & Reliability Projects
-  {
-    type: 'project',
-    imgPath: monitoring,
-    title: t('project_monitoring_platform_title'),
-    description: t('project_monitoring_platform_description'),
-    skills: [
-      "Prometheus",
-      "Grafana",
-      "Performance",
-      "Monitoring"
-    ],
-    ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/main/devopsdive/Enterprise%20Monitoring%20Solution%20Project.md",
-  },
-
-  // Cloud Services & Integration Projects
-  {
-    type: 'project',
-    imgPath: logicapp,
-    title: t('project_commercetools_backup_title'),
-    description: t('project_commercetools_backup_description'),
-    skills: [
-      "Azure",
-      "Cloud Architecture",
-      "High Availability",
-      "Monitoring"
-    ],
-    ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/main/devopsdive/Commercetools%20Data%20Backup%20Solution.md",
-  },
-  // Git & Version Control Projects
-  {
-    type: 'project',
-    imgPath: mirroring,
-    title: t('project_git_mirror_title'),
-    description: t('project_git_mirror_description'),
-    skills: [
-      "GitLab CI",
-      "Pipeline Automation",
-      "CI/CD",
-      "Security",
-      "High Availability",
-      "Version Control"
-    ],
-    ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/main/devopsdive/Cross-Platform%20Git%20Synchronization%20Solution.md",
-  },
-  {
-    type: 'project',
-    imgPath: git,
-    title: t('project_git_optimization_title'),
-    description: t('project_git_optimization_description'),
-    skills: [
-      "Version Control",
-      "GitLab CI",
-      "CI/CD",
-      "Pipeline Automation"
-    ],
-    ghLink: "",
-  },
-  // MACH & Modern Architecture Projects
-  {
-    type: 'project',
-    imgPath: mach,
-    title: t('project_mach_deployment_title'),
-    description: t('project_mach_deployment_description'),
-    skills: [
-      "Microservices",
-      "GitHub Actions",
-      "Pipeline Automation",
-      "Infrastructure as Code",
-      "Service Mesh"
-    ],
-    ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/main/devopsdive/MACH%20Composer%20Automation%20Platform.md",
-  },
-
   // Web Development Projects
   {
     type: 'project',
     imgPath: phbt,
     title: t('project_phbt_title'),
     description: t('project_phbt_description'),
-    skills: ["React", "Firebase", "JavaScript", "Web Development"],
+    skills: ["Vue", "Firebase", "JavaScript", "Web Development"],
     ghLink: "https://github.com/ASKoshelenko/phbt",
     demoLink: "https://crm-phbt.web.app/",
   },
