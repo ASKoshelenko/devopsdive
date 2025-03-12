@@ -34,42 +34,62 @@ import logs_img from "../../Assets/Projects/logs.png";
 
 // DevOps categories with their respective skills
 const CATEGORIES = {
-  category_cloud_engineering: [
+  category_cloud_platforms: [
     "AWS", "Azure", "GCP",
-    "Cloud Architecture",
-    "Cost Optimization",
-    "Serverless"
+    "Cloud Architecture", 
+    "Serverless",
+    "Azure LogicApp",
+    "Cost Optimization"
   ],
   
-  category_containerization: [
-    "Kubernetes", "Docker", 
-    "Containerization", "Microservices",
-    "Service Mesh"
-  ],
-
-  category_automation_cicd: [
-    "Jenkins", "GitHub Actions",
-    "Azure DevOps", "GitLab CI",
-    "CI/CD", "Pipeline Automation"
-  ],
-
   category_infrastructure: [
-    "Terraform", "Ansible", "Helm",
     "Infrastructure as Code",
-    "Networking",
+    "Terraform", 
+    "Docker", 
+    "Kubernetes",
+    "Containerization",
+    "Microservices",
     "High Availability",
-    "Proxmox"
+    "Networking",
+    "Proxmox",
+    "Service Mesh",
+    "Helm",
+    "Ansible"
   ],
 
-  category_monitoring_reliability: [
-    "Prometheus", "Grafana",
+  category_automation: [
+    "CI/CD",
+    "Pipeline Automation",
+    "Jenkins", 
+    "GitHub Actions",
+    "GitLab CI",
+    "Azure DevOps",
+    "Version Control",
+    "BitBucket"
+  ],
+
+  category_monitoring: [
     "Monitoring",
+    "Prometheus", 
+    "Grafana",
     "Performance",
-    "Elastic"
+    "Elastic",
+    "Observability"
   ],
 
-  category_security: [
-    "Security", "SSL/TLS"
+  category_web_development: [
+    "Web Development",
+    "React",
+    "Vue",
+    "JavaScript",
+    "TypeScript",
+    "HTML",
+    "CSS",
+    "Firebase",
+    "Node.js",
+    "MongoDB",
+    "Redux",
+    "API Design"
   ]
 };
 
@@ -79,15 +99,12 @@ function Projects() {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [selectedSkill, setSelectedSkill] = useState(null);
 
-  // Проверяем локальное хранилище при загрузке компонента
   useEffect(() => {
     const savedSkill = localStorage.getItem('selectedSkill');
     if (savedSkill) {
       setSelectedSkill(savedSkill);
-      // Очищаем локальное хранилище после использования
       localStorage.removeItem('selectedSkill');
       
-      // Прокручиваем страницу к проектам после установки фильтра
       setTimeout(() => {
         document.querySelector('.project-cards-container')?.scrollIntoView({ 
           behavior: 'smooth' 
@@ -96,7 +113,6 @@ function Projects() {
     }
   }, []);
 
-  // Projects data wrapped in useMemo to prevent recreation on each render
   const ITEMS_DATA = useMemo(() => [
     {
       type: 'project',
@@ -115,7 +131,7 @@ function Projects() {
     
     {
       type: 'project',
-      imgPath: logs_img, // Или другое подходящее изображение
+      imgPath: logs_img,
       title: t('project_logs_viewer_title'),
       description: t('project_logs_viewer_description'),
       skills: [
@@ -131,7 +147,7 @@ function Projects() {
     
     {
       type: 'project',
-      imgPath: commercetools, // Или другое подходящее изображение
+      imgPath: commercetools,
       title: t('project_api_clients_tool_title'),
       description: t('project_api_clients_tool_description'),
       skills: [
