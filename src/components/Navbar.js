@@ -9,7 +9,7 @@ import { CgFileDocument } from "react-icons/cg";
 import { useTranslation } from 'react-i18next';
 import flagEN from '../Assets/flagEN.png'; 
 import flagUA from '../Assets/flagUA.png'; 
-import flagRU from '../Assets/flagRU.png'; 
+// import flagRU from '../Assets/flagRU.png'; 
 
 
 function NavBar() {
@@ -68,11 +68,11 @@ function NavBar() {
             <img src={flagUA} alt="Ukrainian" style={{ width: '30px' }} />
           </Nav.Link>
         </Nav.Item>
-        <Nav.Item>
+        {/* <Nav.Item>
           <Nav.Link onClick={() => changeLanguage('ru')}>
             <img src={flagRU} alt="Russian" style={{ width: '30px' }} />
           </Nav.Link>
-        </Nav.Item>
+        </Nav.Item> */}
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
           onClick={() => {

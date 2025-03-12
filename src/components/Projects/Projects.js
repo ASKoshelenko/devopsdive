@@ -21,7 +21,7 @@ import proxmox from "../../Assets/Projects/proxmox.png";
 import gke from "../../Assets/Projects/gke.png";
 import mach from "../../Assets/Projects/mach.png";
 import mirroring from "../../Assets/Projects/mirroring.png";
-import canary from "../../Assets/Projects/canary.png";
+// import canary from "../../Assets/Projects/canary.png";
 import logicapp from "../../Assets/Projects/logicapp.png";
 import monitoring from "../../Assets/Projects/monitoring.png";
 import cicd from "../../Assets/Projects/cicd.png";
@@ -90,7 +90,21 @@ function Projects() {
 
   // Projects data moved inside the component
   const ITEMS_DATA = [
-    // Cloud Engineering Projects
+    {
+      type: 'project',
+      imgPath: azure,
+      title: t('project_apim_title'),
+      description: t('project_apim_description'),
+      skills: [
+        "Azure",
+        "Cloud Architecture",
+        "High Availability",
+        "Infrastructure as Code",
+        "Terraform",
+        "Cost Optimization"
+      ],
+      ghLink: "https://github.com/ASKoshelenko/apim/tree/main#readme",
+    },
     {
       type: 'project',
       imgPath: gke,
@@ -134,7 +148,7 @@ function Projects() {
         "High Availability",
         "Security"
       ],
-      ghLink: "",
+      ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/feature/project_reworking/devopsdive/AWS%20Lambda%20Migration%20%26%20Security%20Enhancement.md",
     },
     {
       type: 'project',
@@ -149,7 +163,7 @@ function Projects() {
         "Networking",
         "Security"
       ],
-      ghLink: "",
+      ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/feature/project_reworking/devopsdive/IT%20Marathon.md",
     },
     {
       type: 'project',
@@ -181,7 +195,7 @@ function Projects() {
         "Docker",
         "Microservices"
       ],
-      ghLink: "",
+      ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/feature/project_reworking/devopsdive/GCP%20Kubernetes%20Infrastructure%20Project.md",
     },
     {
       type: 'project',
@@ -213,7 +227,7 @@ function Projects() {
         "GitHub Actions",
         "GitLab CI"
       ],
-      ghLink: "",
+      ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/feature/project_reworking/devopsdive/Enterprise%20E-Commerce%20CICD%20Pipeline.md",
     },
     {
       type: 'project',
@@ -243,7 +257,7 @@ function Projects() {
       "High Availability",
       "Load Balancing"
     ],
-    ghLink: "",
+    ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/feature/project_reworking/devopsdive/Nginx%20Configuration%20and%20SSL%20Implementation.md",
   },
 
   // Monitoring & Reliability Projects
@@ -260,7 +274,7 @@ function Projects() {
       "Performance",
       "Alerting"
     ],
-    ghLink: "",
+    ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/feature/project_reworking/devopsdive/Enterprise%20Monitoring%20Solution%20Project.md",
   },
 
   // Cloud Services & Integration Projects
@@ -277,56 +291,8 @@ function Projects() {
       "High Availability",
       "Azure Monitor"
     ],
-    ghLink: "",
+    ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/feature/project_reworking/devopsdive/Commercetools%20Data%20Backup%20Solution.md",
   },
-  {
-    type: 'project',
-    imgPath: canary,
-    title: t('project_canary_deployment_title'),
-    description: t('project_canary_deployment_description'),
-    skills: [
-      "Cloud Run",
-      "GCP",
-      "CI/CD",
-      "Container Security",
-      "Monitoring",
-      "High Availability"
-    ],
-    ghLink: "",
-  },
-
-  // DevOps Automation Tasks
-  {
-    type: 'task',
-    imgPath: lambda,
-    title: t('task_lambda_migration_title'),
-    description: t('task_lambda_migration_description'),
-    skills: [
-      "AWS Lambda",
-      "Serverless",
-      "CI/CD",
-      "Cloud Architecture",
-      "Performance",
-      "Security"
-    ],
-    ghLink: "",
-  },
-  {
-    type: 'task',
-    imgPath: marathon,
-    title: t('task_terraform_azure_title'),
-    description: t('task_terraform_azure_description'),
-    skills: [
-      "Terraform",
-      "Azure",
-      "Infrastructure as Code",
-      "High Availability",
-      "Networking",
-      "Cloud Architecture"
-    ],
-    ghLink: "",
-  },
-
   // Git & Version Control Projects
   {
     type: 'project',
@@ -341,7 +307,7 @@ function Projects() {
       "Access Management",
       "High Availability"
     ],
-    ghLink: "",
+    ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/feature/project_reworking/devopsdive/Cross-Platform%20Git%20Synchronization%20Solution.md",
   },
   {
     type: 'project',
@@ -358,23 +324,6 @@ function Projects() {
     ],
     ghLink: "",
   },
-  // Additional DevOps Tasks
-  {
-    type: 'task',
-    imgPath: mach,
-    title: t('task_mach_testing_title'),
-    description: t('task_mach_testing_description'),
-    skills: [
-      "Microservices",
-      "API Gateway",
-      "Performance",
-      "Testing",
-      "Service Mesh",
-      "Monitoring"
-    ],
-    ghLink: "",
-  },
-
   // MACH & Modern Architecture Projects
   {
     type: 'project',
@@ -389,7 +338,7 @@ function Projects() {
       "Infrastructure as Code",
       "Service Mesh"
     ],
-    ghLink: "",
+    ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/feature/project_reworking/devopsdive/MACH%20Composer%20Automation%20Platform.md",
   },
 
   // Web Development Projects (если они нужны в портфолио)

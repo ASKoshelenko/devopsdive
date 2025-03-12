@@ -8,7 +8,7 @@ import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import { useTranslation } from 'react-i18next';
 import en_pdf from "../../Assets/CV_Koshelenko.pdf";
 import ua_pdf from "../../Assets/Koshelenko.pdf";
-import ru_pdf from "../../Assets/CV_Koshelenko_RU.pdf"; // Добавлена русская версия
+// import ru_pdf from "../../Assets/CV_Koshelenko_RU.pdf"; // Добавлена русская версия
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
@@ -21,8 +21,8 @@ function ResumeNew() {
     let resumeFile;
     if (locale === "ua") {
       resumeFile = ua_pdf;
-    } else if (locale === "ru") {
-      resumeFile = ru_pdf;
+    // } else if (locale === "ru") {
+    //   resumeFile = ru_pdf;
     } else {
       resumeFile = en_pdf;
     }
@@ -36,8 +36,8 @@ function ResumeNew() {
     let resumeFile;
     if (currentLocale === "ua") {
       resumeFile = ua_pdf;
-    } else if (currentLocale === "ru") {
-      resumeFile = ru_pdf;
+    // } else if (currentLocale === "ru") {
+    //   resumeFile = ru_pdf;
     } else {
       resumeFile = en_pdf;
     }
@@ -68,13 +68,13 @@ function ResumeNew() {
           >
             {t("select_ua_resume")}
           </Button>
-          <Button 
+          {/* <Button 
             variant="primary"
             onClick={() => selectResume('ru')}
             style={{ maxWidth: "250px", margin: "5px", position: "relative", zIndex: 101 }}
           >
             {t("select_ru_resume")}
-          </Button>
+          </Button> */}
         </Row>
         <Row className="resume" style={{ position: "relative", zIndex: 50 }}>
           <Document 
