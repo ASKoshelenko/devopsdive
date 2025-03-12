@@ -59,13 +59,13 @@ function NavBar() {
           <img src={logo} className="img-fluid logo" alt="brand" />
         </Navbar.Brand>
         <Nav.Item>
-          <Nav.Link onClick={() => changeLanguage('ua')}>
-            <img src={flagUA} alt="Ukrainian" style={{ width: '30px' }} />
+          <Nav.Link onClick={() => changeLanguage('en')}>
+            <img src={flagEN} alt="English" style={{ width: '30px' }} />
           </Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link onClick={() => changeLanguage('en')}>
-            <img src={flagEN} alt="English" style={{ width: '30px' }} />
+          <Nav.Link onClick={() => changeLanguage('ua')}>
+            <img src={flagUA} alt="Ukrainian" style={{ width: '30px' }} />
           </Nav.Link>
         </Nav.Item>
         {/* <Nav.Item>

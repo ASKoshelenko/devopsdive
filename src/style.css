@@ -242,6 +242,12 @@ button:focus {
     transform: rotate(0deg);
   }
 }
+
+.project-section .container {
+  position: relative;
+  z-index: 2;
+}
+
 #tsparticles {
   position: fixed !important;
   background-repeat: no-repeat !important;
@@ -541,6 +547,293 @@ button:focus {
 }
 
 /* --------- */
+/* Reworked Projects */
+/* --------- */
+/* Project Section Base */
+.project-section {
+  position: relative;
+  padding-top: 150px;
+  padding-bottom: 30px;
+  background-color: rgb(10, 4, 22);
+}
+
+.project-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Project Heading */
+.project-heading {
+  color: white;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.project-heading .purple {
+  color: #c770f0;
+}
+
+/* Particle Background */
+#tsparticles {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* Main Filters */
+.main-filters {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 2rem;
+}
+
+.main-filters .btn {
+  padding: 8px 24px;
+  background-color: transparent;
+  border: 1px solid #623686;
+  color: white;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  font-size: 0.95em;
+  min-width: 100px;
+  pointer-events: auto;
+}
+
+.main-filters .btn:hover {
+  background-color: rgba(98, 54, 134, 0.5);
+  transform: translateY(-2px);
+  border-color: #c770f0;
+}
+
+.main-filters .btn.active {
+  background-color: #623686;
+  color: white;
+  border-color: #c770f0;
+}
+
+/* Category Filters */
+.category-filters {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  padding: 20px;
+  /* background-color: rgba(35, 15, 89, 0.2); */
+  border-radius: 15px;
+  margin-bottom: 2rem;
+}
+
+.category-filters .btn {
+  padding: 8px 20px;
+  background-color: transparent;
+  border: 1px solid #623686;
+  color: white;
+  border-radius: 10px;
+  font-size: 0.9em;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  pointer-events: auto;
+}
+
+.category-filters .btn:hover {
+  background-color: rgba(98, 54, 134, 0.5);
+  transform: translateY(-2px);
+  border-color: #c770f0;
+}
+
+.category-filters .btn.active {
+  background-color: #623686;
+  color: white;
+  border-color: #c770f0;
+}
+
+/* Active Filters Display */
+.active-filters {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 15px 20px;
+  background-color: rgba(35, 15, 89, 0.1);
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
+.active-filters-label {
+  color: white;
+  font-size: 0.95em;
+}
+
+.filter-tag {
+  padding: 6px 14px;
+  background-color: #623686;
+  color: white;
+  border-radius: 10px;
+  font-size: 0.9em;
+}
+
+.clear-filters {
+  color: #c770f0;
+  text-decoration: none;
+  padding: 0 10px;
+  font-size: 0.9em;
+  pointer-events: auto;
+}
+
+.clear-filters:hover {
+  color: #d48ff8;
+  text-decoration: underline;
+}
+
+/* Results Count */
+.results-count {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  font-size: 1.1em;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 2rem;
+}
+
+/* Project Cards Container */
+.project-cards-container {
+  position: relative;
+  z-index: 3;
+  justify-content: center;
+  padding-bottom: 2rem;
+}
+
+/* Project Card */
+.project-card {
+  padding: 15px;
+  height: 100%;
+}
+
+.project-card-view {
+  background-color: rgba(35, 15, 89, 0.2);
+  border: 1px solid rgba(200, 137, 230, 0.2);
+  border-radius: 15px;
+  overflow: hidden;
+  height: 100%;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 5px 3px rgba(119, 53, 136, 0.459);
+  display: flex;
+  flex-direction: column;
+}
+
+
+.project-card-view:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 4px 5px rgba(129, 72, 144, 0.561);
+}
+
+.project-card-view .card-img-top {
+  border-radius: 15px 15px 0 0;
+  height: 200px;
+  object-fit: contain;
+  padding: 20px;
+  opacity: 0.8;
+  min-height: 200px;
+  max-height: 250px;
+}
+
+.project-card-view .card-body {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card-view .card-title {
+  color: #c770f0;
+  font-size: 1.3em;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.project-card-view .card-text {
+  color: white;
+  font-size: 0.95em;
+  line-height: 1.5;
+}
+
+/* Skills in Cards */
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(200, 137, 230, 0.2);
+}
+
+.skill-tag {
+  padding: 4px 12px;
+  background-color: rgba(98, 54, 134, 0.9);
+  border: 1px solid rgba(200, 137, 230, 0.3);
+  border-radius: 15px;
+  color: white;
+  font-size: 0.8em;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.skill-tag:hover {
+  background-color: #6d20c5;
+  transform: translateY(-2px);
+}
+
+.skill-tag.active {
+  background-color: #8a49a8;
+  border-color: #c95bf5;
+}
+
+/* No Results State */
+.no-results {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  padding: 40px;
+  background-color: rgba(35, 15, 89, 0.2);
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.no-results h3 {
+  color: #c770f0;
+  margin-bottom: 15px;
+}
+
+.no-results p {
+  color: white;
+  margin-bottom: 20px;
+}
+
+.reset-button {
+  background-color: #623686;
+  border: none;
+  padding: 8px 24px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  color: white;
+  pointer-events: auto;
+}
+
+.reset-button:hover {
+  background-color: #8a49a8;
+  transform: translateY(-2px);
+}
+/* --------- */
 /* About */
 /* --------- */
 
@@ -610,12 +903,34 @@ button:focus {
   padding-bottom: 30px !important;
   background-image: var(--section-background-color) !important;
   color: white !important;
+  z-index: 1;
+}
+
+.resume-section .container {
+  position: relative;
+  z-index: 10; /* Высокий z-index для контейнера */
+}
+
+.resume-section .tsparticles-canvas-el,
+#tsparticles canvas {
+  position: absolute !important;
+  top: 0;
+  left: 0;
+  pointer-events: none !important; /* Ключевое свойство - игнорировать события мыши */
+  z-index: 0 !important; /* Низкий z-index */
+}
+
+.resume-section .btn {
+  position: relative !important;
+  z-index: 15 !important; /* Высокий z-index для кнопок */
+  pointer-events: auto !important; /* Явное указание обрабатывать события */
 }
 
 .resume {
   padding-top: 50px;
   padding-bottom: 50px;
   justify-content: center;
+  z-index: 5; 
 }
 
 .resume-left {
