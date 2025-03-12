@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
@@ -36,47 +36,38 @@ const CATEGORIES = {
     "AWS", "Azure", "GCP",
     "Cloud Architecture",
     "Cost Optimization",
-    "Cloud Security",
     "Serverless"
   ],
   
   category_containerization: [
-    "Kubernetes", "GKE",
-    "Docker", "Docker Compose",
-    "Microservices",
-    "Container Security",
+    "Kubernetes", "Docker", 
+    "Containerization", "Microservices",
     "Service Mesh"
   ],
 
   category_automation_cicd: [
     "Jenkins", "GitHub Actions",
     "Azure DevOps", "GitLab CI",
-    "CI/CD", "Pipeline Automation",
-    "Commercetools"
+    "CI/CD", "Pipeline Automation"
   ],
 
   category_infrastructure: [
-    "Terraform", "Ansible",
+    "Terraform", "Ansible", "Helm",
     "Infrastructure as Code",
     "Networking",
-    "Load Balancing",
     "High Availability",
     "Proxmox"
   ],
 
   category_monitoring_reliability: [
     "Prometheus", "Grafana",
-    "Zabbix", "Monitoring",
-    "Incident Response",
-    "SLA Management",
-    "Performance"
+    "Monitoring",
+    "Performance",
+    "Elastic"
   ],
 
   category_security: [
-    "IAM", "Security Groups",
-    "SSL/TLS", "VPN",
-    "IAP", "Compliance",
-    "Access Management"
+    "Security", "SSL/TLS"
   ]
 };
 
@@ -86,7 +77,22 @@ function Projects() {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [selectedSkill, setSelectedSkill] = useState(null);
 
-  // const projectTypes = ['all', 'project', 'task'];
+  // Проверяем локальное хранилище при загрузке компонента
+  useEffect(() => {
+    const savedSkill = localStorage.getItem('selectedSkill');
+    if (savedSkill) {
+      setSelectedSkill(savedSkill);
+      // Очищаем локальное хранилище после использования
+      localStorage.removeItem('selectedSkill');
+      
+      // Прокручиваем страницу к проектам после установки фильтра
+      setTimeout(() => {
+        document.querySelector('.project-cards-container')?.scrollIntoView({ 
+          behavior: 'smooth' 
+        });
+      }, 500);
+    }
+  }, []);
 
   // Projects data wrapped in useMemo to prevent recreation on each render
   const ITEMS_DATA = useMemo(() => [
@@ -100,8 +106,7 @@ function Projects() {
         "Cloud Architecture",
         "High Availability",
         "Infrastructure as Code",
-        "Terraform",
-        "Cost Optimization"
+        "Terraform"
       ],
       ghLink: "https://github.com/ASKoshelenko/apim/tree/main#readme",
     },
@@ -113,9 +118,8 @@ function Projects() {
       skills: [
         "GCP",
         "Cloud Architecture",
-        "Cost Optimization",
         "Kubernetes",
-        "Container Security",
+        "Containerization",
         "Microservices"
       ],
       ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/main/devopsdive/GKE%20Migration%20Project.md",
@@ -130,8 +134,7 @@ function Projects() {
         "Cloud Architecture",
         "High Availability",
         "Infrastructure as Code",
-        "Terraform",
-        "Cost Optimization"
+        "Terraform"
       ],
       ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/main/devopsdive/Azure%20Infrastructure%20Project.md",
     },
@@ -144,7 +147,6 @@ function Projects() {
         "AWS",
         "Serverless",
         "Cloud Architecture",
-        "Cost Optimization",
         "High Availability",
         "Security"
       ],
@@ -173,10 +175,8 @@ function Projects() {
       skills: [
         "Infrastructure as Code",
         "High Availability",
-        "Virtualization",
         "Networking",
-        "Proxmox",
-        "Load Balancing"
+        "Proxmox"
       ],
       ghLink: "",
     },
@@ -189,11 +189,11 @@ function Projects() {
       description: t('project_gcp_kubernetes_description'),
       skills: [
         "Kubernetes",
-        "GKE",
-        "Container Security",
-        "Service Mesh",
+        "Containerization",
         "Docker",
-        "Microservices"
+        "Microservices",
+        "Service Mesh",
+        "GCP"
       ],
       ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/main/devopsdive/GCP%20Kubernetes%20Infrastructure%20Project.md",
     },
@@ -204,11 +204,9 @@ function Projects() {
       description: t('project_docker_compose_description'),
       skills: [
         "Docker",
-        "Docker Compose",
-        "Container Security",
+        "Containerization",
         "Microservices",
-        "Service Mesh",
-        "Container Registry"
+        "Service Mesh"
       ],
       ghLink: "",
     },
@@ -251,11 +249,10 @@ function Projects() {
     description: t('project_nginx_description'),
     skills: [
       "SSL/TLS",
-      "Security Groups",
-      "Access Management",
+      "Security",
       "Networking",
       "High Availability",
-      "Load Balancing"
+      "Nginx"
     ],
     ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/main/devopsdive/Nginx%20Configuration%20and%20SSL%20Implementation.md",
   },
@@ -269,10 +266,8 @@ function Projects() {
     skills: [
       "Prometheus",
       "Grafana",
-      "Incident Response",
-      "SLA Management",
       "Performance",
-      "Alerting"
+      "Monitoring"
     ],
     ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/main/devopsdive/Enterprise%20Monitoring%20Solution%20Project.md",
   },
@@ -285,11 +280,9 @@ function Projects() {
     description: t('project_commercetools_backup_description'),
     skills: [
       "Azure",
-      "Azure Logic Apps",
       "Cloud Architecture",
-      "Azure Storage",
       "High Availability",
-      "Azure Monitor"
+      "Monitoring"
     ],
     ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/main/devopsdive/Commercetools%20Data%20Backup%20Solution.md",
   },
@@ -304,8 +297,8 @@ function Projects() {
       "Pipeline Automation",
       "CI/CD",
       "Security",
-      "Access Management",
-      "High Availability"
+      "High Availability",
+      "Version Control"
     ],
     ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/main/devopsdive/Cross-Platform%20Git%20Synchronization%20Solution.md",
   },
@@ -315,12 +308,10 @@ function Projects() {
     title: t('project_git_optimization_title'),
     description: t('project_git_optimization_description'),
     skills: [
-      "Git",
-      "GitLab",
-      "BitBucket",
+      "Version Control",
+      "GitLab CI",
       "CI/CD",
-      "Pipeline Automation",
-      "Access Management"
+      "Pipeline Automation"
     ],
     ghLink: "",
   },
@@ -332,7 +323,6 @@ function Projects() {
     description: t('project_mach_deployment_description'),
     skills: [
       "Microservices",
-      "Cloud Native",
       "GitHub Actions",
       "Pipeline Automation",
       "Infrastructure as Code",
@@ -341,13 +331,13 @@ function Projects() {
     ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/main/devopsdive/MACH%20Composer%20Automation%20Platform.md",
   },
 
-  // Web Development Projects (если они нужны в портфолио)
+  // Web Development Projects
   {
     type: 'project',
     imgPath: phbt,
     title: t('project_phbt_title'),
     description: t('project_phbt_description'),
-    skills: ["React", "Firebase", "JavaScript", "CSS"],
+    skills: ["React", "Firebase", "JavaScript", "Web Development"],
     ghLink: "https://github.com/ASKoshelenko/phbt",
     demoLink: "https://crm-phbt.web.app/",
   },
@@ -356,7 +346,7 @@ function Projects() {
     imgPath: jira,
     title: t('project_jira_title'),
     description: t('project_jira_description'),
-    skills: ["React", "Firebase", "JavaScript", "CSS"],
+    skills: ["React", "Firebase", "JavaScript", "Web Development"],
     ghLink: "",
   },
   {
@@ -364,7 +354,7 @@ function Projects() {
     imgPath: landing,
     title: t('project_landing_title'),
     description: t('project_landing_description'),
-    skills: ["HTML", "CSS", "JavaScript"],
+    skills: ["HTML", "JavaScript", "Web Development"],
     ghLink: "https://github.com/ASKoshelenko/Landing-page#readme",
   },
   {
@@ -372,7 +362,7 @@ function Projects() {
     imgPath: foxtar,
     title: t('project_multipage_title'),
     description: t('project_multipage_description'),
-    skills: ["React", "Redux", "Node.js", "MongoDB"],
+    skills: ["React", "Redux", "Node.js", "MongoDB", "Web Development"],
     ghLink: "https://github.com/ASKoshelenko/Project-Store#readme",
   },
   {
@@ -380,7 +370,7 @@ function Projects() {
     imgPath: calc,
     title: t('project_calculator_title'),
     description: t('project_calculator_description'),
-    skills: ["JavaScript", "HTML", "CSS"],
+    skills: ["JavaScript", "HTML", "Web Development"],
     ghLink: "https://github.com/ASKoshelenko/calculator",
   },
   {
@@ -388,7 +378,7 @@ function Projects() {
     imgPath: chess,
     title: t('project_chess_title'),
     description: t('project_chess_description'),
-    skills: ["React", "TypeScript"],
+    skills: ["React", "TypeScript", "Web Development"],
     ghLink: "https://github.com/ASKoshelenko/chess#readme",
   },
   {
@@ -396,7 +386,7 @@ function Projects() {
     imgPath: fakestore,
     title: t('project_fakestore_title'),
     description: t('project_fakestore_description'),
-    skills: ["React", "REST API"],
+    skills: ["React", "Web Development", "API Design"],
     ghLink: "https://github.com/ASKoshelenko/fakeStoreAPI#readme",
   },
   {
@@ -404,7 +394,7 @@ function Projects() {
     imgPath: git,
     title: t('project_searchapp_title'),
     description: t('project_searchapp_description'),
-    skills: ["React", "REST API", "GitHub API"],
+    skills: ["React", "API Design", "Version Control", "Web Development"],
     ghLink: "https://github.com/ASKoshelenko/react_githubSearch#readme",
   }
 ], [t]);
@@ -417,17 +407,15 @@ function Projects() {
     return ITEMS_DATA.filter(item => {
       const matchesType = selectedType === 'all' || item.type === selectedType;
       const matchesCategory = !selectedCategory || hasSkillsFromCategory(item.skills, selectedCategory);
-      const matchesSkill = !selectedSkill || item.skills.includes(selectedSkill);
+      
+      // Улучшенная проверка совпадения навыка с регистронезависимостью
+      const matchesSkill = !selectedSkill || 
+        item.skills.some(skill => 
+          skill.toLowerCase() === selectedSkill.toLowerCase());
       
       return matchesType && matchesCategory && matchesSkill;
     });
   }, [selectedType, selectedCategory, selectedSkill, ITEMS_DATA]);
-
-  // Удаляем неиспользуемую функцию handleTypeClick
-  // const handleTypeClick = (type) => {
-  //   setSelectedType(type);
-  //   setSelectedSkill(null);
-  // };
 
   const handleCategoryClick = (category) => {
     setSelectedCategory(category === selectedCategory ? null : category);
@@ -452,19 +440,6 @@ function Projects() {
         <h1 className="project-heading">
           {t('projects_my_recent_works')}
         </h1>
-
-        {/* Main filters */}
-        {/* <div className="main-filters">
-          {projectTypes.map((type) => (
-            <Button
-              key={type}
-              onClick={() => handleTypeClick(type)}
-              className={`btn ${selectedType === type ? 'active' : ''}`}
-            >
-              {type === 'all' ? t('all') : t(`type_${type}`)}
-            </Button>
-          ))}
-        </div> */}
 
         {/* Category filters */}
         <div className="category-filters">
