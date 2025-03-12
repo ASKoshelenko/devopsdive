@@ -86,7 +86,7 @@ function Projects() {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [selectedSkill, setSelectedSkill] = useState(null);
 
-  const projectTypes = ['all', 'project', 'task'];
+  // const projectTypes = ['all', 'project', 'task'];
 
   // Projects data moved inside the component
   const ITEMS_DATA = [
