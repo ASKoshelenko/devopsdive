@@ -79,5 +79,3 @@ If you have any questions or suggestions, feel free to reach out!
 
 ### ⭐ Show Your Support
 If you like this project, consider giving it a ⭐ on GitHub!
-
-^^,
