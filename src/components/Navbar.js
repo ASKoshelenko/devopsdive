@@ -103,11 +103,11 @@ function NavBar() {
               </Nav.Link>
             </Nav.Item>
 
-            {/* <Nav.Item>
+            <Nav.Item>
               <Nav.Link as={Link} to="/resume" onClick={() => updateExpanded(false)}>
                 <CgFileDocument style={{ marginBottom: "2px" }} /> {t("navbar_resume")}
               </Nav.Link>
-            </Nav.Item>  */}
+            </Nav.Item> 
           </Nav>
           {/* <Nav.Item>
             <Nav.Link onClick={() => changeLanguage('ua')}>
