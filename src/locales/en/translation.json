@@ -1,0 +1,15 @@
+{
+  "navbar_home": "Home",
+  "navbar_about": "About",
+  "navbar_projects": "Projects",
+  "navbar_resume": "Resume",
+  "navbar_blog": "Blog",
+  "blog": {
+    "title": "My Thoughts",
+    "subtitle": "Personal insights and experiences from my DevOps journey",
+    "readMore": "Read More",
+    "publishedOn": "Published on",
+    "minRead": "min read",
+    "tags": "Tags"
+  }
+} 
