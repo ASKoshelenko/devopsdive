@@ -1273,3 +1273,29 @@ button:focus {
     padding: 20px 10px;
   }
 }
+
+/* Achievements block minimalistic grayscale style */
+.achievements-block .achievements-img {
+  filter: grayscale(1) brightness(0.85) contrast(1.05);
+  transition: filter 0.35s cubic-bezier(0.4,0,0.2,1), box-shadow 0.35s;
+  box-shadow: 0 2px 12px 0 rgba(80,30,180,0.08);
+  border-radius: 12px;
+}
+.achievements-block .achievements-icon:hover .achievements-img,
+.achievements-block .achievements-icon:focus .achievements-img {
+  filter: none;
+  box-shadow: 0 4px 24px 0 #c770f0cc, 0 1.5px 8px 0 rgba(80,30,180,0.13);
+  z-index: 2;
+}
+.achievements-block .achievements-icon {
+  background: rgba(30, 16, 50, 0.18);
+  border-radius: 16px !important;
+  transition: box-shadow 0.3s, border 0.3s;
+  border: 1.5px solid rgba(199, 112, 240, 0.10) !important;
+  box-shadow: 0 2px 8px 0 rgba(80,30,180,0.07);
+}
+.achievements-block .achievements-icon:hover,
+.achievements-block .achievements-icon:focus {
+  border: 2px solid #c770f0 !important;
+  box-shadow: 0 6px 24px 0 #c770f033, 0 2px 12px 0 rgba(80,30,180,0.13);
+}
