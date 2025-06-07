@@ -1,0 +1,15 @@
+{
+  "navbar_home": "Главная",
+  "navbar_about": "Обо мне",
+  "navbar_projects": "Проекты",
+  "navbar_resume": "Резюме",
+  "navbar_blog": "Блог",
+  "blog": {
+    "title": "Мои Мысли",
+    "subtitle": "Личные размышления и опыт из моего пути в DevOps",
+    "readMore": "Читать Далее",
+    "publishedOn": "Опубликовано",
+    "minRead": "мин чтения",
+    "tags": "Теги"
+  }
+} 

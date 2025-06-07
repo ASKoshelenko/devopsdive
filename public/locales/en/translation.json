@@ -3,6 +3,7 @@
   "navbar_about":"About",
   "navbar_projects":"Projects",
   "navbar_resume":"Resume",
+  "navbar_blog":"Blog",
   "home_hi_there":"Hi There!",
   "home_im":"I'M",
   "home_name":"Alex",
@@ -174,5 +175,9 @@
   "project_devsecops_title":"DevSecOps Pipeline Implementation",
   "project_devsecops_description":"Implemented comprehensive DevSecOps solutions integrated into CI/CD pipelines, including SonarQube, Trivy, and RBAC. Enhanced security and compliance across Azure and AWS environments with detailed documentation and implementation guides.",
   "project_release_branch_title":"Release Branch Management Tool",
-  "project_release_branch_description":"Developed automated tool for release branch management, enabling efficient identification and locking of release/hotfix branches across repositories. Implemented comprehensive reporting system and standardized release workflow, ensuring code stability during production rollouts."
+  "project_release_branch_description":"Developed automated tool for release branch management, enabling efficient identification and locking of release/hotfix branches across repositories. Implemented comprehensive reporting system and standardized release workflow, ensuring code stability during production rollouts.",
+  "blog": {
+    "title": "My Thoughts",
+    "subtitle": "Personal insights and experiences from my DevOps journey"
+  }
 }
