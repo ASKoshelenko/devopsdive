@@ -8,7 +8,7 @@ import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import { useTranslation } from 'react-i18next';
 import en_pdf from "../../Assets/CV_Koshelenko.pdf";
 import ua_pdf from "../../Assets/Koshelenko.pdf";
-// import ru_pdf from "../../Assets/CV_Koshelenko_RU.pdf"; // Добавлена русская версия
+import ru_pdf from "../../Assets/CV_Koshelenko_RU.pdf";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
@@ -16,13 +16,14 @@ function ResumeNew() {
   const { t, i18n } = useTranslation();
   const [width, setWidth] = useState(1200);
   const [pdfPath, setPdfPath] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
   
   const selectResume = (locale) => {
     let resumeFile;
     if (locale === "ua") {
       resumeFile = ua_pdf;
-    // } else if (locale === "ru") {
-    //   resumeFile = ru_pdf;
+    } else if (locale === "ru") {
+      resumeFile = ru_pdf;
     } else {
       resumeFile = en_pdf;
     }
@@ -31,13 +32,23 @@ function ResumeNew() {
   
   useEffect(() => {
     setWidth(window.innerWidth);
+    setIsMobile(window.innerWidth <= 767);
+    const handleResize = () => {
+      setWidth(window.innerWidth);
+      setIsMobile(window.innerWidth <= 767);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+  
+  useEffect(() => {
     const currentLocale = i18n.language;
     
     let resumeFile;
     if (currentLocale === "ua") {
       resumeFile = ua_pdf;
-    // } else if (currentLocale === "ru") {
-    //   resumeFile = ru_pdf;
+    } else if (currentLocale === "ru") {
+      resumeFile = ru_pdf;
     } else {
       resumeFile = en_pdf;
     }
@@ -53,29 +64,31 @@ function ResumeNew() {
     <div>
       <Container fluid className="resume-section">
         <Particle />
-        <Row style={{ justifyContent: "center", position: "relative", zIndex: 100 }}>
-          <Button 
-            variant="primary"
-            onClick={() => selectResume('en')}
-            style={{ maxWidth: "250px", margin: "5px", position: "relative", zIndex: 101 }}
-          >
-            {t("select_en_resume")}
-          </Button>
-          <Button 
-            variant="primary"
-            onClick={() => selectResume('ua')}
-            style={{ maxWidth: "250px", margin: "5px", position: "relative", zIndex: 101 }}
-          >
-            {t("select_ua_resume")}
-          </Button>
-          {/* <Button 
-            variant="primary"
-            onClick={() => selectResume('ru')}
-            style={{ maxWidth: "250px", margin: "5px", position: "relative", zIndex: 101 }}
-          >
-            {t("select_ru_resume")}
-          </Button> */}
-        </Row>
+        {!isMobile && (
+          <Row className="resume-lang-switch-row" style={{ justifyContent: "center", position: "relative", zIndex: 100 }}>
+            <Button 
+              variant="primary"
+              onClick={() => selectResume('en')}
+              style={{ maxWidth: "250px", margin: "5px", position: "relative", zIndex: 101 }}
+            >
+              {t("select_en_resume")}
+            </Button>
+            <Button 
+              variant="primary"
+              onClick={() => selectResume('ua')}
+              style={{ maxWidth: "250px", margin: "5px", position: "relative", zIndex: 101 }}
+            >
+              {t("select_ua_resume")}
+            </Button>
+            <Button 
+              variant="primary"
+              onClick={() => selectResume('ru')}
+              style={{ maxWidth: "250px", margin: "5px", position: "relative", zIndex: 101 }}
+            >
+              {t("select_ru_resume")}
+            </Button>
+          </Row>
+        )}
         <Row className="resume" style={{ position: "relative", zIndex: 50 }}>
           <Document 
             file={pdfPath} 
