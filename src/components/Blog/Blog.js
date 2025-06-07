@@ -1,16 +1,19 @@
-import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import React, { useState } from "react";
+import { Container, Row, Col, Card } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import Particle from "../Particle";
 // import ReactMarkdown from "react-markdown";
 
-const blogPosts = {
-  en: {
-    title: "FED UP — WHO AM I IF NOT DEVOPS?",
-    date: "2024-03-20",
-    tags: ["DevOps", "Career", "Personal"],
-    readTime: "5 min read",
-    content: `This is not a post for likes.
+const blogPosts = [
+  {
+    id: "fed-up",
+    en: {
+      title: "FED UP — WHO AM I IF NOT DEVOPS?",
+      date: "2024-03-20",
+      tags: ["DevOps", "Career", "Personal"],
+      readTime: "5 min read",
+      preview: "This is not a post for likes. It's a post from the heart. For those who value real engineers over perfect resumes.",
+      content: `This is not a post for likes.
 It's a post from the heart. For those who value real engineers over perfect resumes.
 
 I've been in IT since 2016. Started as a system administrator. Did EVERYTHING: setup, monitoring, infrastructure maintenance. Alone. There wasn't even a fancy term like "DevOps" back then — but I was already living that mindset.
@@ -95,13 +98,14 @@ Who can spot a diamond, even if it doesn't shine with a certificate (yet).
 
 So...
 Who am I?`
-  },
-  ru: {
-    title: "ДОСТАЛО — КТО Я, ЕСЛИ НЕ DEVOPS?",
-    date: "2024-03-20",
-    tags: ["DevOps", "Карьера", "Личное"],
-    readTime: "5 мин чтения",
-    content: `Это не пост для лайков.
+    },
+    ru: {
+      title: "ДОСТАЛО — КТО Я, ЕСЛИ НЕ DEVOPS?",
+      date: "2024-03-20",
+      tags: ["DevOps", "Карьера", "Личное"],
+      readTime: "5 мин чтения",
+      preview: "Это не пост для лайков. Это пост от сердца. Для тех, кто ценит настоящих инженеров больше, чем идеальные резюме.",
+      content: `Это не пост для лайков.
 Это пост от сердца. Для тех, кто ценит настоящих инженеров больше, чем идеальные резюме.
 
 Я в IT с 2016 года. Начал как системный администратор. Делал ВСЁ: настройка, мониторинг, обслуживание инфраструктуры. Один. Тогда даже не было такого модного термина как "DevOps" — но я уже жил этим мышлением.
@@ -185,13 +189,14 @@ DevOps — это НЕ чеклист.
 Кто может разглядеть алмаз, даже если он пока не блестит сертификатом.
 
 Так кто я?`
-  },
-  ua: {
-    title: "ДОСИТЬ — ХТО Я, ЯКЩО НЕ DEVOPS?",
-    date: "2024-03-20",
-    tags: ["DevOps", "Кар'єра", "Особисте"],
-    readTime: "5 хв читання",
-    content: `Це не пост для лайків.
+    },
+    ua: {
+      title: "ДОСИТЬ — ХТО Я, ЯКЩО НЕ DEVOPS?",
+      date: "2024-03-20",
+      tags: ["DevOps", "Кар'єра", "Особисте"],
+      readTime: "5 хв читання",
+      preview: "Це не пост для лайків. Це пост від серця. Для тих, хто цінує справжніх інженерів більше, ніж ідеальні резюме.",
+      content: `Це не пост для лайків.
 Це пост від серця. Для тих, хто цінує справжніх інженерів більше, ніж ідеальні резюме.
 
 Я в IT з 2016 року. Почав як системний адміністратор. Робив ВСЕ: налаштування, моніторинг, обслуговування інфраструктури. Один. Тоді навіть не було такого модного терміну як "DevOps" — але я вже жив цим мисленням.
@@ -275,13 +280,167 @@ DevOps — це НЕ чекліст.
 Хто може розгледіти діамант, навіть якщо він поки не блищить сертифікатом.
 
 То хто я?`
-  }
-};
+    }
+  },
+  {
+    id: "not-about-tools",
+    en: {
+      title: "Why Real DevOps is Not About Tools",
+      date: "2024-04-10",
+      tags: ["DevOps", "Mindset", "Culture"],
+      readTime: "4 min read",
+      preview: "DevOps is not about the latest toolset. It's about mindset, ownership, and delivery. Tools are just the means.",
+      content: `DevOps is not about the latest toolset. It's about mindset, ownership, and delivery. Tools are just the means.
+
+I've seen teams chase the next big thing: Kubernetes, Terraform, Serverless, you name it. But without the right mindset, even the best tools become shelfware.
+
+What matters?
+• Taking ownership of problems, not just your code.
+• Automating not for automation's sake, but to solve real pain points.
+• Building bridges between dev and ops, not walls of blame.
+
+I've worked in places where the toolchain was perfect, but the culture was toxic. Delivery suffered. People burned out. No tool can fix a broken process or a lack of trust.
+
+The best DevOps engineers I know are not tool fanatics. They're problem solvers. They ask "why" before "how". They care about outcomes, not just outputs.
+
+So next time you see a job ad listing 20 tools, remember: it's not about the stack. It's about the impact you make.
+
+DevOps is a journey. Tools help, but mindset wins.`,
+    },
+    ru: {
+      title: "Почему настоящий DevOps — не про инструменты",
+      date: "2024-04-10",
+      tags: ["DevOps", "Мышление", "Культура"],
+      readTime: "4 мин чтения",
+      preview: "DevOps — это не про модные тулзы. Это про мышление, ответственность и результат. Инструменты — лишь средство.",
+      content: `DevOps — это не про модные тулзы. Это про мышление, ответственность и результат. Инструменты — лишь средство.
+
+Я видел команды, которые гнались за новым: Kubernetes, Terraform, Serverless... Но без правильного подхода даже лучшие инструменты становятся мертвым грузом.
+
+Что важно?
+• Брать ответственность не только за код, но и за результат.
+• Автоматизировать не ради галочки, а чтобы решать реальные боли.
+• Строить мосты между dev и ops, а не стены обвинений.
+
+Я работал там, где стек был идеален, а культура — токсична. Результат? Срывы, выгорание, хаос. Ни один инструмент не спасет, если процессы и доверие сломаны.
+
+Лучшие DevOps-инженеры, которых я знаю, не фанатеют по тулзам. Они решают задачи. Сначала спрашивают "зачем", а потом "как". Им важен результат, а не просто процесс.
+
+В следующий раз, когда увидишь вакансию с 20 тулзами, помни: важен не стек, а твой вклад.
+
+DevOps — это путь. Инструменты помогают, но выигрывает мышление.`,
+    },
+    ua: {
+      title: "Чому справжній DevOps — не про інструменти",
+      date: "2024-04-10",
+      tags: ["DevOps", "Мислення", "Культура"],
+      readTime: "4 хв читання",
+      preview: "DevOps — це не про модні тулзи. Це про мислення, відповідальність і результат. Інструменти — лише засіб.",
+      content: `DevOps — це не про модні тулзи. Це про мислення, відповідальність і результат. Інструменти — лише засіб.
+
+Я бачив команди, які гналися за новим: Kubernetes, Terraform, Serverless... Але без правильного підходу навіть найкращі інструменти стають баластом.
+
+Що важливо?
+• Брати відповідальність не лише за код, а й за результат.
+• Автоматизувати не заради галочки, а щоб вирішувати реальні болі.
+• Будувати мости між dev і ops, а не стіни звинувачень.
+
+Я працював там, де стек був ідеальний, а культура — токсична. Результат? Зриви, вигорання, хаос. Жоден інструмент не врятує, якщо процеси і довіра зламані.
+
+Кращі DevOps-інженери, яких я знаю, не фанатіють по тулзам. Вони вирішують задачі. Спочатку питають "навіщо", а потім "як". Їм важливий результат, а не просто процес.
+
+Наступного разу, коли побачиш вакансію з 20 тулзами, пам'ятай: важливий не стек, а твій внесок.
+
+DevOps — це шлях. Інструменти допомагають, але виграє мислення.`,
+    }
+  },
+  {
+    id: "burnout-balance",
+    en: {
+      title: "From Burnout to Balance: My DevOps Survival Guide",
+      date: "2024-05-01",
+      tags: ["DevOps", "Wellbeing", "Growth"],
+      readTime: "6 min read",
+      preview: "DevOps can burn you out. Here's how I learned to survive, grow, and keep my passion alive.",
+      content: `DevOps can burn you out. Here's how I learned to survive, grow, and keep my passion alive.
+
+Early in my career, I thought working 24/7 was the only way to succeed. I was wrong. Burnout hit me hard — and taught me lessons I'll never forget.
+
+What helped me recover?
+• Setting boundaries. Work is important, but so is life.
+• Automating the boring stuff, so I could focus on what matters.
+• Saying "no" to endless context switching and firefighting.
+• Finding a community of like-minded engineers.
+
+Now, I prioritize:
+• Deep work over busywork.
+• Learning over perfection.
+• Health over hustle.
+
+DevOps is a marathon, not a sprint. If you're feeling the pressure, you're not alone. Reach out, share your story, and remember: you can build great things without burning out.
+
+Stay real. Stay balanced.`,
+    },
+    ru: {
+      title: "От выгорания к балансу: мой DevOps-гайд",
+      date: "2024-05-01",
+      tags: ["DevOps", "Баланс", "Рост"],
+      readTime: "6 мин чтения",
+      preview: "DevOps может выжечь дотла. Вот как я научился выживать, расти и не терять страсть к делу.",
+      content: `DevOps может выжечь дотла. Вот как я научился выживать, расти и не терять страсть к делу.
+
+В начале карьеры я думал, что успех — это работать 24/7. Я ошибался. Выгорание настигло меня быстро — и дало уроки на всю жизнь.
+
+Что помогло восстановиться?
+• Границы. Работа важна, но жизнь — тоже.
+• Автоматизация рутины, чтобы фокусироваться на главном.
+• Умение говорить "нет" бесконечным переключениям и тушению пожаров.
+• Сообщество единомышленников.
+
+Теперь я выбираю:
+• Глубокую работу вместо суеты.
+• Обучение вместо перфекционизма.
+• Здоровье вместо бесконечной гонки.
+
+DevOps — это марафон, а не спринт. Если чувствуешь давление — ты не один. Делись опытом, поддерживай других и помни: можно строить крутые вещи, не сгорая дотла.
+
+Будь настоящим. Держи баланс.`,
+    },
+    ua: {
+      title: "Від вигорання до балансу: мій DevOps-гайд",
+      date: "2024-05-01",
+      tags: ["DevOps", "Баланс", "Зростання"],
+      readTime: "6 хв читання",
+      preview: "DevOps може спалити дотла. Ось як я навчився виживати, рости і не втрачати пристрасть.",
+      content: `DevOps може спалити дотла. Ось як я навчився виживати, рости і не втрачати пристрасть.
+
+На початку кар'єри я думав, що успіх — це працювати 24/7. Я помилявся. Вигорання настигло швидко — і дало уроки на все життя.
+
+Що допомогло відновитися?
+• Межі. Робота важлива, але життя — теж.
+• Автоматизація рутини, щоб фокусуватися на головному.
+• Вміння казати "ні" нескінченним перемиканням і гасінню пожеж.
+• Спільнота однодумців.
+
+Тепер я обираю:
+• Глибоку роботу замість суєти.
+• Навчання замість перфекціонізму.
+• Здоров'я замість нескінченної гонки.
+
+DevOps — це марафон, а не спринт. Якщо відчуваєш тиск — ти не один. Ділись досвідом, підтримуй інших і пам'ятай: можна будувати круті речі, не згораючи дотла.
+
+Будь справжнім. Тримай баланс.`,
+    }
+  },
+];
 
 function Blog() {
   const { t, i18n } = useTranslation();
   const lang = ["en", "ru", "ua"].includes(i18n.language) ? i18n.language : "en";
-  const post = blogPosts[lang];
+  const [selectedId, setSelectedId] = useState(null);
+
+  const posts = blogPosts.map(post => ({ ...post[lang], id: post.id }));
+  const selectedPost = posts.find(p => p.id === selectedId) || posts[0];
 
   return (
     <Container fluid className="blog-section">
@@ -290,27 +449,54 @@ function Blog() {
         <Row>
           <Col md={12} className="blog-header">
             <h1 className="blog-title">
-              <span className="purple">{post.title}</span>
+              <span className="purple">{t("blog.title")}</span>
             </h1>
             <p className="blog-subtitle">{t("blog.subtitle")}</p>
-            <div className="post-meta" style={{ marginTop: 10 }}>
-              <span className="post-date">{post.date}</span>
-              <span className="post-read-time">{post.readTime}</span>
-            </div>
-            <div className="post-tags">
-              {post.tags && post.tags.map((tag, idx) => (
-                <span key={idx} className="post-tag">{tag}</span>
-              ))}
-            </div>
           </Col>
         </Row>
         <Row className="blog-content">
-          <Col md={12} className="blog-posts">
-            {post.content.split(/\n{2,}/).map((para, idx) => (
+          <Col md={4} className="blog-posts">
+            {posts.map(post => (
+              <Card
+                key={post.id}
+                className={`blog-post-card${post.id === selectedPost.id ? " selected" : ""}`}
+                onClick={() => setSelectedId(post.id)}
+                style={{ cursor: "pointer", marginBottom: 20 }}
+              >
+                <Card.Body>
+                  <Card.Title className="post-title">{post.title}</Card.Title>
+                  <div className="post-meta">
+                    <span className="post-date">{post.date}</span>
+                    <span className="post-read-time">{post.readTime}</span>
+                  </div>
+                  <div className="post-tags">
+                    {post.tags.map((tag, idx) => (
+                      <span key={idx} className="post-tag">{tag}</span>
+                    ))}
+                  </div>
+                  <Card.Text className="post-excerpt">
+                    {post.preview}
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            ))}
+          </Col>
+          <Col md={8} className="blog-full-post">
+            <h2 className="post-title">{selectedPost.title}</h2>
+            <div className="post-meta">
+              <span className="post-date">{selectedPost.date}</span>
+              <span className="post-read-time">{selectedPost.readTime}</span>
+            </div>
+            <div className="post-tags">
+              {selectedPost.tags.map((tag, idx) => (
+                <span key={idx} className="post-tag">{tag}</span>
+              ))}
+            </div>
+            {selectedPost.content.split(/\n{2,}/).map((para, idx) => (
               <p key={idx} className="post-content">{para}</p>
             ))}
             {/* Если нужен markdown:
-            <ReactMarkdown className="post-content">{post.content}</ReactMarkdown>
+            <ReactMarkdown className="post-content">{selectedPost.content}</ReactMarkdown>
             */}
           </Col>
         </Row>
