@@ -1,79 +1,35 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Container, Row, Col, Card, Spinner } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import Particle from "../Particle";
 import ReactMarkdown from "react-markdown";
-import matter from "gray-matter";
-
-// Импортируем все статьи статически для каждого языка
-import fedUpEn from "../../content/blog/fed-up/en.md?raw";
-import fedUpRu from "../../content/blog/fed-up/ru.md?raw";
-import fedUpUa from "../../content/blog/fed-up/ua.md?raw";
-
-import notAboutToolsEn from "../../content/blog/not-about-tools/en.md?raw";
-import notAboutToolsRu from "../../content/blog/not-about-tools/ru.md?raw";
-import notAboutToolsUa from "../../content/blog/not-about-tools/ua.md?raw";
-
-import burnoutBalanceEn from "../../content/blog/burnout-balance/en.md?raw";
-import burnoutBalanceRu from "../../content/blog/burnout-balance/ru.md?raw";
-import burnoutBalanceUa from "../../content/blog/burnout-balance/ua.md?raw";
-
-// Сопоставление id статьи и ее контента по языкам
-const allBlogContent = {
-  "fed-up": {
-    en: fedUpEn,
-    ru: fedUpRu,
-    ua: fedUpUa,
-  },
-  "not-about-tools": {
-    en: notAboutToolsEn,
-    ru: notAboutToolsRu,
-    ua: notAboutToolsUa,
-  },
-  "burnout-balance": {
-    en: burnoutBalanceEn,
-    ru: burnoutBalanceRu,
-    ua: burnoutBalanceUa,
-  },
-};
-
-// Список id статей
-const BLOG_IDS = Object.keys(allBlogContent);
-
-// Список поддерживаемых языков
-const SUPPORTED_LANGS = ["en", "ru", "ua"];
-
-// Функция для парсинга markdown
-function parseMarkdown(md, id) {
-  const { data, content } = matter(md);
-  return {
-    id,
-    ...data,
-    content,
-  };
-}
+import { blogPosts } from "../../content/blog";
 
 function Blog() {
   const { t, i18n } = useTranslation();
-  const lang = SUPPORTED_LANGS.includes(i18n.language) ? i18n.language : "en";
-  const [posts, setPosts] = useState([]);
+  const lang = i18n.language;
   const [selectedId, setSelectedId] = useState(null);
   const [loading, setLoading] = useState(true);
+  const postRef = useRef(null);
+  const firstLoad = useRef(true);
 
   useEffect(() => {
     setLoading(true);
-    const loadedPosts = BLOG_IDS.map(id => {
-      // Используем текущий язык, если нет — fallback на английский
-      const content = allBlogContent[id][lang] || allBlogContent[id]["en"];
-      return parseMarkdown(content, id);
-    });
-
-    setPosts(loadedPosts);
-    setSelectedId(loadedPosts[0]?.id || null);
+    if (blogPosts.length > 0) {
+      setSelectedId(blogPosts[0].id);
+    }
     setLoading(false);
-  }, [lang]);
+  }, []);
 
-  const selectedPost = posts.find((p) => p.id === selectedId) || posts[0];
+  // Скроллим к статье при выборе новой, кроме первой загрузки
+  useEffect(() => {
+    if (!firstLoad.current && postRef.current) {
+      postRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    firstLoad.current = false;
+  }, [selectedId]);
+
+  const selectedPost = blogPosts.find((p) => p.id === selectedId) || blogPosts[0];
 
   return (
     <Container fluid className="blog-section">
@@ -94,7 +50,7 @@ function Blog() {
         ) : (
           <Row className="blog-content">
             <Col md={4} className="blog-posts">
-              {posts.map((post) => (
+              {blogPosts.map((post) => (
                 <Card
                   key={post.id}
                   className={`blog-post-card${post.id === selectedPost?.id ? " selected" : ""}`}
@@ -102,38 +58,38 @@ function Blog() {
                   style={{ cursor: "pointer", marginBottom: 20 }}
                 >
                   <Card.Body>
-                    <Card.Title className="post-title">{post.title}</Card.Title>
+                    <Card.Title className="post-title">{post[lang]?.title || post.en.title}</Card.Title>
                     <div className="post-meta">
-                      <span className="post-date">{post.date}</span>
-                      <span className="post-read-time">{post.readTime}</span>
+                      <span className="post-date">{post[lang]?.date || post.en.date}</span>
+                      <span className="post-read-time">{post[lang]?.readTime || post.en.readTime}</span>
                     </div>
                     <div className="post-tags">
-                      {post.tags && post.tags.map((tag, idx) => (
+                      {post[lang]?.tags?.map((tag, idx) => (
                         <span key={idx} className="post-tag">{tag}</span>
                       ))}
                     </div>
                     <Card.Text className="post-excerpt">
-                      {post.preview}
+                      {post[lang]?.preview || post.en.preview}
                     </Card.Text>
                   </Card.Body>
                 </Card>
               ))}
             </Col>
-            <Col md={8} className="blog-full-post">
+            <Col md={8} className="blog-full-post" ref={postRef}>
               {selectedPost && (
                 <>
-                  <h2 className="post-title">{selectedPost.title}</h2>
+                  <h2 className="post-title">{selectedPost[lang]?.title || selectedPost.en.title}</h2>
                   <div className="post-meta">
-                    <span className="post-date">{selectedPost.date}</span>
-                    <span className="post-read-time">{selectedPost.readTime}</span>
+                    <span className="post-date">{selectedPost[lang]?.date || selectedPost.en.date}</span>
+                    <span className="post-read-time">{selectedPost[lang]?.readTime || selectedPost.en.readTime}</span>
                   </div>
                   <div className="post-tags">
-                    {selectedPost.tags && selectedPost.tags.map((tag, idx) => (
+                    {selectedPost[lang]?.tags?.map((tag, idx) => (
                       <span key={idx} className="post-tag">{tag}</span>
                     ))}
                   </div>
                   <ReactMarkdown className="post-content">
-                    {selectedPost.content}
+                    {selectedPost[lang]?.content || selectedPost.en.content}
                   </ReactMarkdown>
                 </>
               )}
