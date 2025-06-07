@@ -922,9 +922,18 @@ button:focus {
 }
 
 .resume-section .btn {
-  position: relative !important;
-  z-index: 15 !important; /* Высокий z-index для кнопок */
-  pointer-events: auto !important; /* Явное указание обрабатывать события */
+  min-width: 320px;
+  max-width: 340px;
+  height: 72px;
+  white-space: normal;
+  text-align: center;
+  word-break: break-word;
+  padding: 18px 10px;
+  font-size: 1.18rem;
+  line-height: 1.2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .resume {
@@ -943,16 +952,35 @@ button:focus {
 }
 
 @media (max-width: 767px) {
-  .resume-left {
-    padding-right: 15px !important;
-    padding-left: 15px !important;
+  .resume {
+    padding-top: 0px !important;
+    padding-bottom: 20px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
-
-  .resume-right {
-    padding-right: 15px !important;
-    padding-left: 15px !important;
+  .resume .react-pdf__Document {
+    box-shadow: 0 4px 24px 0 #c770f055, 0 1.5px 8px 0 rgba(80,30,180,0.08);
+    border-radius: 0;
+    background: none;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 98vw;
+  }
+  .resume-section .btn {
+    margin-top: 12px;
+    margin-bottom: 8px;
   }
 }
+
+.resume .react-pdf__Document {
+  box-shadow: 0 6px 36px 0 #c770f055, 0 2px 12px  rgba(80,30,180,0.10);
+  border-radius: 0;
+  background: none;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 90vw;
+}
+
 .resume .resume-title {
   font-size: 2em;
   font-weight: 700;
@@ -1298,4 +1326,10 @@ button:focus {
 .achievements-block .achievements-icon:focus {
   border: 2px solid #c770f0 !important;
   box-shadow: 0 6px 24px 0 #c770f033, 0 2px 12px 0 rgba(80,30,180,0.13);
+}
+
+@media (max-width: 767px) {
+  .resume-lang-switch-row {
+    display: none !important;
+  }
 }
