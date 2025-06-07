@@ -116,6 +116,56 @@ function Projects() {
   const ITEMS_DATA = useMemo(() => [
     {
       type: 'project',
+      imgPath: azure,
+      title: t('project_azure_openai_title'),
+      description: t('project_azure_openai_description'),
+      skills: [
+        "Azure",
+        "Azure OpenAI",
+        "Python",
+        "API Design",
+        "Security",
+        "Cloud Architecture",
+        "DevOps"
+      ],
+      ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/main/devopsdive/Azure%20OpenAI%20Integration%20for%20Commercetools.md",
+    },
+    {
+      type: 'project',
+      imgPath: cicd,
+      title: t('project_devsecops_title'),
+      description: t('project_devsecops_description'),
+      skills: [
+        "DevSecOps",
+        "Terraform",
+        "Azure",
+        "AWS",
+        "Security",
+        "CI/CD",
+        "Jenkins",
+        "SonarQube",
+        "Trivy"
+      ],
+      ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/main/devopsdive/DevSecOps%20Pipeline%20Implementation.md",
+    },
+    {
+      type: 'project',
+      imgPath: git,
+      title: t('project_release_branch_title'),
+      description: t('project_release_branch_description'),
+      skills: [
+        "Git",
+        "Bitbucket",
+        "API Integration",
+        "Automation",
+        "Bash",
+        "DevOps",
+        "Release Management"
+      ],
+      ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/main/devopsdive/Release%20Branch%20Management%20Tool.md",
+    },
+    {
+      type: 'project',
       imgPath: import_data,
       title: t('project_import_automation_title'),
       description: t('project_import_automation_description'),
@@ -261,7 +311,9 @@ function Projects() {
         "Prometheus",
         "Grafana",
         "Performance",
-        "Monitoring"
+        "Monitoring",
+        "Infrastructure as Code",
+        "High Availability"
       ],
       ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/main/devopsdive/Enterprise%20Monitoring%20Solution%20Project.md",
     },
@@ -275,7 +327,8 @@ function Projects() {
         "Cloud Architecture",
         "High Availability",
         "Infrastructure as Code",
-        "Terraform"
+        "Terraform",
+        "Security"
       ],
       ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/main/devopsdive/Azure%20Infrastructure%20Project.md",
     },
@@ -289,9 +342,10 @@ function Projects() {
         "GitLab CI",
         "CI/CD",
         "BitBucket",
-        "Pipeline Automation"
+        "Pipeline Automation",
+        "Security"
       ],
-      ghLink: "",
+      ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/main/devopsdive/Git%20Repository%20Optimization.md",
     },
     {
       type: 'project',
@@ -301,7 +355,10 @@ function Projects() {
       skills: [
         "AWS",
         "Serverless",
-        "Security"
+        "Security",
+        "Python",
+        "CI/CD",
+        "Automation"
       ],
       ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/main/devopsdive/AWS%20Lambda%20Migration%20%26%20Security%20Enhancement.md",
     },
@@ -451,7 +508,7 @@ function Projects() {
     description: t('project_searchapp_description'),
     skills: ["React", "API Design", "Version Control", "Web Development"],
     ghLink: "https://github.com/ASKoshelenko/react_githubSearch#readme",
-  }
+  },
 ], [t]);
 
   const hasSkillsFromCategory = (projectSkills, category) => {
