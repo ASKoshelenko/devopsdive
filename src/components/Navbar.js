@@ -105,14 +105,14 @@ function NavBar() {
             </Nav.Item>
 
             <Nav.Item>
-              <Nav.Link as={Link} to="/resume" onClick={() => updateExpanded(false)}>
-                <CgFileDocument style={{ marginBottom: "2px" }} /> {t("navbar_resume")}
+              <Nav.Link as={Link} to="/blog" onClick={() => updateExpanded(false)}>
+                <BsPencilSquare style={{ marginBottom: "2px" }} /> {t("navbar_blog")}
               </Nav.Link>
             </Nav.Item>
 
             <Nav.Item>
-              <Nav.Link as={Link} to="/blog" onClick={() => updateExpanded(false)}>
-                <BsPencilSquare style={{ marginBottom: "2px" }} /> {t("navbar_blog")}
+              <Nav.Link as={Link} to="/resume" onClick={() => updateExpanded(false)}>
+                <CgFileDocument style={{ marginBottom: "2px" }} /> {t("navbar_resume")}
               </Nav.Link>
             </Nav.Item>
           </Nav>
