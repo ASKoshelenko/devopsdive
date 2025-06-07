@@ -3,6 +3,7 @@ title: "FED UP — WHO AM I IF NOT DEVOPS?"
 date: "2024-03-20"
 tags: ["DevOps", "Career", "Personal"]
 readTime: "5 min read"
+preview: "This is not a post for likes. It's a post from the heart. For those who value real engineers over perfect resumes."
 ---
 
 This is not a post for likes.
