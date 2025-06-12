@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Container, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Particle from "../Particle";
+import LanguageStickers from "../LanguageStickers";
 import { AiOutlineDownload } from "react-icons/ai";
 import { Document, Page, pdfjs } from "react-pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
@@ -16,7 +17,6 @@ function ResumeNew() {
   const { t, i18n } = useTranslation();
   const [width, setWidth] = useState(1200);
   const [pdfPath, setPdfPath] = useState(null);
-  const [isMobile, setIsMobile] = useState(false);
   
   const selectResume = (locale) => {
     let resumeFile;
@@ -32,10 +32,8 @@ function ResumeNew() {
   
   useEffect(() => {
     setWidth(window.innerWidth);
-    setIsMobile(window.innerWidth <= 767);
     const handleResize = () => {
       setWidth(window.innerWidth);
-      setIsMobile(window.innerWidth <= 767);
     };
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
@@ -43,17 +41,7 @@ function ResumeNew() {
   
   useEffect(() => {
     const currentLocale = i18n.language;
-    
-    let resumeFile;
-    if (currentLocale === "ua") {
-      resumeFile = ua_pdf;
-    } else if (currentLocale === "ru") {
-      resumeFile = ru_pdf;
-    } else {
-      resumeFile = en_pdf;
-    }
-
-    setPdfPath(resumeFile);
+    selectResume(currentLocale);
   }, [i18n.language]);
   
   if (!pdfPath) {
@@ -64,31 +52,9 @@ function ResumeNew() {
     <div>
       <Container fluid className="resume-section">
         <Particle />
-        {!isMobile && (
-          <Row className="resume-lang-switch-row" style={{ justifyContent: "center", position: "relative", zIndex: 100 }}>
-            <Button 
-              variant="primary"
-              onClick={() => selectResume('en')}
-              style={{ maxWidth: "250px", margin: "5px", position: "relative", zIndex: 101 }}
-            >
-              {t("select_en_resume")}
-            </Button>
-            <Button 
-              variant="primary"
-              onClick={() => selectResume('ua')}
-              style={{ maxWidth: "250px", margin: "5px", position: "relative", zIndex: 101 }}
-            >
-              {t("select_ua_resume")}
-            </Button>
-            <Button 
-              variant="primary"
-              onClick={() => selectResume('ru')}
-              style={{ maxWidth: "250px", margin: "5px", position: "relative", zIndex: 101 }}
-            >
-              {t("select_ru_resume")}
-            </Button>
-          </Row>
-        )}
+        
+        <LanguageStickers />
+
         <Row className="resume" style={{ position: "relative", zIndex: 50 }}>
           <Document 
             file={pdfPath} 
