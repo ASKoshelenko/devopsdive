@@ -40,7 +40,14 @@ const CATEGORIES = {
     "Cloud Architecture", 
     "Serverless",
     "Azure LogicApp",
-    "Cost Optimization"
+    "Cost Optimization",
+    "FinOps",
+    "Multi-cloud",
+    "Machine Learning",
+    "Azure OpenAI",
+    "Cloud Migration",
+    "Hybrid Infrastructure",
+    "Enterprise Architecture"
   ],
   
   category_infrastructure: [
@@ -55,7 +62,10 @@ const CATEGORIES = {
     "Proxmox",
     "Service Mesh",
     "Helm",
-    "Ansible"
+    "Ansible",
+    "Virtualization",
+    "Network Security",
+    "Router Configuration"
   ],
 
   category_automation: [
@@ -66,7 +76,9 @@ const CATEGORIES = {
     "GitLab CI",
     "Azure DevOps",
     "Version Control",
-    "BitBucket"
+    "BitBucket",
+    "PowerShell",
+    "Active Directory"
   ],
 
   category_monitoring: [
@@ -91,6 +103,24 @@ const CATEGORIES = {
     "MongoDB",
     "Redux",
     "API Design"
+  ],
+
+  category_security: [
+    "Security",
+    "DevSecOps", 
+    "Compliance",
+    "Vulnerability Assessment",
+    "Network Security"
+  ],
+
+  category_leadership: [
+    "Leadership",
+    "Mentoring",
+    "Team Management", 
+    "DevOps Culture",
+    "Technical Training",
+    "Career Development",
+    "Process Improvement"
   ]
 };
 
@@ -130,6 +160,41 @@ function Projects() {
         "DevOps"
       ],
       ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/main/devopsdive/Azure%20OpenAI%20Integration%20for%20Commercetools.md",
+    },
+    {
+      type: 'project',
+      imgPath: azure,
+      title: t('project_ai_devops_platform_title'),
+      description: t('project_ai_devops_platform_description'),
+      skills: [
+        "Azure",
+        "Azure OpenAI",
+        "Terraform",
+        "Python",
+        "CI/CD",
+        "Machine Learning",
+        "API Design",
+        "DevOps",
+        "Cost Optimization"
+      ],
+      ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/main/devopsdive/Azure%20OpenAI%20DevOps%20Integration%20Platform.md",
+    },
+    {
+      type: 'project',
+      imgPath: azure,
+      title: t('project_hybrid_migration_title'),
+      description: t('project_hybrid_migration_description'),
+      skills: [
+        "Azure",
+        "Terraform",
+        "PowerShell",
+        "Cloud Migration",
+        "Hybrid Infrastructure",
+        "Active Directory",
+        "Enterprise Architecture",
+        "Cost Optimization"
+      ],
+      ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/main/devopsdive/Enterprise%20Hybrid%20Infrastructure%20Migration.md",
     },
     {
       type: 'project',
@@ -405,6 +470,89 @@ function Projects() {
         "Proxmox"
       ],
       ghLink: "",
+    },
+    // New Projects from CV Experience
+    {
+      type: 'project',
+      imgPath: proxmox,
+      title: t('project_proxmox_automation_title'),
+      description: t('project_proxmox_automation_description'),
+      skills: [
+        "Infrastructure as Code",
+        "Terraform",
+        "Ansible",
+        "Python",
+        "Virtualization",
+        "Automation",
+        "High Availability"
+      ],
+      ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/main/devopsdive/Proxmox%20Virtualization%20Automation%20Platform.md",
+    },
+    {
+      type: 'project',
+      imgPath: monitoring,
+      title: t('project_mikrotik_iac_title'),
+      description: t('project_mikrotik_iac_description'),
+      skills: [
+        "Infrastructure as Code",
+        "Terraform",
+        "Python",
+        "Networking",
+        "Automation",
+        "Network Security",
+        "Router Configuration"
+      ],
+      ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/main/devopsdive/MikroTik%20Network%20Infrastructure%20as%20Code.md",
+    },
+    {
+      type: 'project',
+      imgPath: cicd,
+      title: t('project_security_hardening_title'),
+      description: t('project_security_hardening_description'),
+      skills: [
+        "Security",
+        "DevSecOps",
+        "AWS",
+        "Terraform",
+        "CI/CD",
+        "Compliance",
+        "Vulnerability Assessment",
+        "Automation"
+      ],
+      ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/main/devopsdive/Security%20Assessment%20%26%20Hardening%20Pipeline.md",
+    },
+    {
+      type: 'project',
+      imgPath: azure,
+      title: t('project_finops_platform_title'),
+      description: t('project_finops_platform_description'),
+      skills: [
+        "AWS",
+        "Azure", 
+        "GCP",
+        "Cost Optimization",
+        "Python",
+        "Machine Learning",
+        "FinOps",
+        "Multi-cloud"
+      ],
+      ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/main/devopsdive/Cost%20Optimization%20%26%20FinOps%20Platform.md",
+    },
+    {
+      type: 'project',
+      imgPath: cicd,
+      title: t('project_devops_leadership_title'),
+      description: t('project_devops_leadership_description'),
+      skills: [
+        "Leadership",
+        "Mentoring",
+        "Team Management",
+        "DevOps Culture",
+        "Technical Training",
+        "Career Development",
+        "Process Improvement"
+      ],
+      ghLink: "https://github.com/ASKoshelenko/devopsdive/blob/main/devopsdive/DevOps%20Team%20Leadership%20%26%20Mentoring%20Program.md",
     },
     {
       type: 'project',
