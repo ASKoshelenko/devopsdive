@@ -2,6 +2,7 @@ import React, { useState, useEffect, useMemo } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
+import LanguageStickers from "../LanguageStickers";
 import { useTranslation } from 'react-i18next';
 
 // Import images
@@ -548,6 +549,7 @@ function Projects() {
   return (
     <Container fluid className="project-section">
       <Particle />
+      <LanguageStickers />
       <Container>
         <h1 className="project-heading">
           {t('projects_my_recent_works')}

@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { Container, Row, Col, Card, Spinner } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import Particle from "../Particle";
+import LanguageStickers from "../LanguageStickers";
 import ReactMarkdown from "react-markdown";
 import { blogPosts } from "../../content/blog";
 
@@ -33,6 +34,7 @@ function Blog() {
   return (
     <Container fluid className="blog-section">
       <Particle />
+      <LanguageStickers />
       <Container>
         <Row>
           <Col md={12} className="blog-header">

@@ -8,9 +8,7 @@ import { AiOutlineHome, AiOutlineFundProjectionScreen, AiOutlineUser } from "rea
 import { CgFileDocument } from "react-icons/cg";
 import { BsPencilSquare } from "react-icons/bs";
 import { useTranslation } from 'react-i18next';
-import flagEN from '../Assets/flagEN.png'; 
-import flagUA from '../Assets/flagUA.png'; 
-import flagRU from '../Assets/flagRU.png'; 
+ 
 
 
 function NavBar() {
@@ -18,7 +16,7 @@ function NavBar() {
   const [navColour, updateNavbar] = useState(false);
   const navRef = useRef();
 
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   function scrollHandler() {
     if (window.scrollY >= 20) {
@@ -43,10 +41,6 @@ function NavBar() {
 
   window.addEventListener("scroll", scrollHandler);
 
-  const changeLanguage = (lng) => {
-    i18n.changeLanguage(lng);
-  };
-
   return (
     <Navbar
       expanded={expand}
@@ -59,21 +53,6 @@ function NavBar() {
         <Navbar.Brand href="/" className="d-flex">
           <img src={logo} className="img-fluid logo" alt="brand" />
         </Navbar.Brand>
-        <Nav.Item>
-          <Nav.Link onClick={() => changeLanguage('en')}>
-            <img src={flagEN} alt="English" style={{ width: '30px' }} />
-          </Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link onClick={() => changeLanguage('ua')}>
-            <img src={flagUA} alt="Ukrainian" style={{ width: '30px' }} />
-          </Nav.Link>
-        </Nav.Item>
-        <Nav.Item>
-          <Nav.Link onClick={() => changeLanguage('ru')}>
-            <img src={flagRU} alt="Russian" style={{ width: '30px' }} />
-          </Nav.Link>
-        </Nav.Item>
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
           onClick={() => {
