@@ -1234,6 +1234,7 @@ button:focus {
   font-size: 1.08rem;
   line-height: 1.7;
   margin-bottom: 18px;
+  text-align: left;
 }
 
 .blog-sidebar {
