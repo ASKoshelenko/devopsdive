@@ -21,7 +21,6 @@ function Blog() {
     setLoading(false);
   }, []);
 
-  // Скроллим к статье при выборе новой, кроме первой загрузки
   useEffect(() => {
     if (!firstLoad.current && postRef.current) {
       postRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
