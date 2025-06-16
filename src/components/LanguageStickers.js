@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useTranslation } from 'react-i18next';
 import flagEN from "../Assets/flagEN.png";
 import flagUA from "../Assets/flagUA.png";
-import flagRU from "../Assets/flagRU.png";
+// import flagRU from "../Assets/flagRU.png"; // Временно отключен - резюме на русском не актуально
 
 function LanguageStickers() {
   const { i18n } = useTranslation();
@@ -34,6 +34,7 @@ function LanguageStickers() {
       >
         <img src={flagUA} alt="UA" />
       </div>
+      {/* Временно отключен русский язык - резюме не актуально
       <div 
         className={`language-sticker ${activeLanguage === 'ru' ? 'active' : ''}`}
         onClick={() => selectLanguage('ru')}
@@ -41,6 +42,7 @@ function LanguageStickers() {
       >
         <img src={flagRU} alt="RU" />
       </div>
+      */}
     </div>
   );
 }

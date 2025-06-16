@@ -16,6 +16,8 @@ i18n
   .init({
     fallbackLng: 'en',
     debug: true, 
+    // Временно ограничиваем доступные языки - исключаем русский
+    supportedLngs: ['en', 'ua'], 
     detection: {
       order: ['queryString', 'cookie', 'localStorage', 'path', 'subdomain'],
       caches: ['cookie'],

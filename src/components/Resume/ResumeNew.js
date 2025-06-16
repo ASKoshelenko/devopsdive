@@ -9,7 +9,7 @@ import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import { useTranslation } from 'react-i18next';
 import en_pdf from "../../Assets/CV_Koshelenko.pdf";
 import ua_pdf from "../../Assets/Koshelenko.pdf";
-import ru_pdf from "../../Assets/CV_Koshelenko_RU.pdf";
+// import ru_pdf from "../../Assets/CV_Koshelenko_RU.pdf"; // Временно отключен - резюме не актуально
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
@@ -23,7 +23,9 @@ function ResumeNew() {
     if (locale === "ua") {
       resumeFile = ua_pdf;
     } else if (locale === "ru") {
-      resumeFile = ru_pdf;
+      // Временно отключено - резюме на русском не актуально
+      // resumeFile = ru_pdf;
+      resumeFile = en_pdf; // Показываем английскую версию вместо русской
     } else {
       resumeFile = en_pdf;
     }
