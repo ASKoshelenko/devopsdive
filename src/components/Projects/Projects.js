@@ -6,9 +6,10 @@ import LanguageStickers from "../LanguageStickers";
 import { useTranslation } from 'react-i18next';
 
 // Import images
+import ai from "../../Assets/Projects/ai.png";
+import MonitoringTool from "../../Assets/Projects/MonitoringTool.png";
 import phbt from "../../Assets/Projects/phbt.png";
 import calc from "../../Assets/Projects/calc.png";
-import nginx from "../../Assets/Projects/nginx.png";
 import chess from "../../Assets/Projects/chess.png";
 import dockercompose from "../../Assets/Projects/dockercompose.png";
 import fakestore from "../../Assets/Projects/fakestore.png";
@@ -17,22 +18,31 @@ import git from "../../Assets/Projects/git.png";
 import jenkins from "../../Assets/Projects/jenkins.png";
 import jira from "../../Assets/Projects/jira.png";
 import landing from "../../Assets/Projects/landing.png";
-import proxmox from "../../Assets/Projects/proxmox.png";
-
+import InfraMigration from "../../Assets/Projects/InfraMigration.png";
+import DevSecOps from "../../Assets/Projects/DevSecOps.png";
+import ReleaseBranch from "../../Assets/Projects/ReleaseBranch.png";
 import gke from "../../Assets/Projects/gke.png";
 import mach from "../../Assets/Projects/mach.png";
-import mirroring from "../../Assets/Projects/mirroring.png";
-import commercetools from "../../Assets/Projects/commercetools.png";
-import logicapp from "../../Assets/Projects/logicapp.png";
-import monitoring from "../../Assets/Projects/monitoring.png";
-import cicd from "../../Assets/Projects/cicd.png";
 import gcpkube from "../../Assets/Projects/gcpkube.png";
-import marathon from "../../Assets/Projects/marathon.png";
-import lambda from "../../Assets/Projects/lambda.png";
+import ITMarathon from "../../Assets/Projects/ITMarathon.png";
 import azure from "../../Assets/Projects/azure.png";
-import import_data from "../../Assets/Projects/import_data.png";
-import logs_img from "../../Assets/Projects/logs.png";
-
+import ImportTrigger from "../../Assets/Projects/ImportTrigger.png";
+import eshopLogs from "../../Assets/Projects/eshopLogs.png";
+import CTtool from "../../Assets/Projects/CTtool.png";
+import APIM from "../../Assets/Projects/APIM.png";
+import CICDCT from "../../Assets/Projects/CICDCT.png";
+import LogicApp from "../../Assets/Projects/AzureLogicApp.png";
+import GitSync from "../../Assets/Projects/gitSynchro.png";
+import MonitoringTool2 from "../../Assets/Projects/MonitoringTool copy.png";
+import gitOptimization from "../../Assets/Projects/gitOptimization.png";
+import AWSLambda from "../../Assets/Projects/AWSLambda.png";
+import ProxmoxVAP from "../../Assets/Projects/ProxmoxVAP.png";
+import ProxmoxDC from "../../Assets/Projects/ProxmoxDC.png";
+import MikroTik from "../../Assets/Projects/MikroTik.png";
+import SecAssessment from "../../Assets/Projects/SecAssessment.png";
+import FinOps from "../../Assets/Projects/FinOps.png";
+import Leadership from "../../Assets/Projects/Leadership.png";
+import Nginx2 from "../../Assets/Projects/Nginx2.png";
 // DevOps categories with their respective skills
 const CATEGORIES = {
   category_cloud_platforms: [
@@ -147,7 +157,7 @@ function Projects() {
   const ITEMS_DATA = useMemo(() => [
     {
       type: 'project',
-      imgPath: azure,
+      imgPath: ai,
       title: t('project_azure_openai_title'),
       description: t('project_azure_openai_description'),
       skills: [
@@ -163,7 +173,7 @@ function Projects() {
     },
     {
       type: 'project',
-      imgPath: azure,
+      imgPath: MonitoringTool,
       title: t('project_ai_devops_platform_title'),
       description: t('project_ai_devops_platform_description'),
       skills: [
@@ -181,7 +191,7 @@ function Projects() {
     },
     {
       type: 'project',
-      imgPath: azure,
+      imgPath: InfraMigration,
       title: t('project_hybrid_migration_title'),
       description: t('project_hybrid_migration_description'),
       skills: [
@@ -198,7 +208,7 @@ function Projects() {
     },
     {
       type: 'project',
-      imgPath: cicd,
+      imgPath: DevSecOps,
       title: t('project_devsecops_title'),
       description: t('project_devsecops_description'),
       skills: [
@@ -216,7 +226,7 @@ function Projects() {
     },
     {
       type: 'project',
-      imgPath: git,
+      imgPath: ReleaseBranch,
       title: t('project_release_branch_title'),
       description: t('project_release_branch_description'),
       skills: [
@@ -232,7 +242,7 @@ function Projects() {
     },
     {
       type: 'project',
-      imgPath: import_data,
+      imgPath: ImportTrigger,
       title: t('project_import_automation_title'),
       description: t('project_import_automation_description'),
       skills: [
@@ -247,7 +257,7 @@ function Projects() {
     
     {
       type: 'project',
-      imgPath: logs_img,
+      imgPath: eshopLogs,
       title: t('project_logs_viewer_title'),
       description: t('project_logs_viewer_description'),
       skills: [
@@ -263,7 +273,7 @@ function Projects() {
     
     {
       type: 'project',
-      imgPath: commercetools,
+      imgPath: CTtool,
       title: t('project_api_clients_tool_title'),
       description: t('project_api_clients_tool_description'),
       skills: [
@@ -278,7 +288,7 @@ function Projects() {
     },
     {
       type: 'project',
-      imgPath: marathon,
+      imgPath: ITMarathon,
       title: t('project_terraform_infrastructure_title'),
       description: t('project_terraform_infrastructure_description'),
       skills: [
@@ -308,7 +318,7 @@ function Projects() {
     },
     {
       type: 'project',
-      imgPath: azure,
+      imgPath: APIM,
       title: t('project_apim_title'),
       description: t('project_apim_description'),
       skills: [
@@ -323,7 +333,7 @@ function Projects() {
         // Automation & CI/CD Projects
     {
       type: 'project',
-      imgPath: cicd,
+      imgPath: CICDCT,
       title: t('project_bosch_cicd_title'),
       description: t('project_bosch_cicd_description'),
       skills: [
@@ -338,7 +348,7 @@ function Projects() {
     // Cloud Services & Integration Projects
     {
       type: 'project',
-      imgPath: logicapp,
+      imgPath: LogicApp,
       title: t('project_commercetools_backup_title'),
       description: t('project_commercetools_backup_description'),
       skills: [
@@ -353,7 +363,7 @@ function Projects() {
     // Git & Version Control Projects
     {
       type: 'project',
-      imgPath: mirroring,
+      imgPath: GitSync,
       title: t('project_git_mirror_title'),
       description: t('project_git_mirror_description'),
       skills: [
@@ -370,7 +380,7 @@ function Projects() {
       // Monitoring & Reliability Projects
     {
       type: 'project',
-      imgPath: monitoring,
+      imgPath: MonitoringTool2,
       title: t('project_monitoring_platform_title'),
       description: t('project_monitoring_platform_description'),
       skills: [
@@ -400,7 +410,7 @@ function Projects() {
     },
     {
       type: 'project',
-      imgPath: git,
+      imgPath: gitOptimization,
       title: t('project_git_optimization_title'),
       description: t('project_git_optimization_description'),
       skills: [
@@ -415,7 +425,7 @@ function Projects() {
     },
     {
       type: 'project',
-      imgPath: lambda,
+      imgPath: AWSLambda,
       title: t('project_aws_lambda_title'),
       description: t('project_aws_lambda_description'),
       skills: [
@@ -460,7 +470,7 @@ function Projects() {
     },
     {
       type: 'project',
-      imgPath: proxmox,
+      imgPath: ProxmoxDC,
       title: t('project_proxmox_title'),
       description: t('project_proxmox_description'),
       skills: [
@@ -474,7 +484,7 @@ function Projects() {
     // New Projects from CV Experience
     {
       type: 'project',
-      imgPath: proxmox,
+      imgPath: ProxmoxVAP,
       title: t('project_proxmox_automation_title'),
       description: t('project_proxmox_automation_description'),
       skills: [
@@ -490,7 +500,7 @@ function Projects() {
     },
     {
       type: 'project',
-      imgPath: monitoring,
+      imgPath: MikroTik,
       title: t('project_mikrotik_iac_title'),
       description: t('project_mikrotik_iac_description'),
       skills: [
@@ -506,7 +516,7 @@ function Projects() {
     },
     {
       type: 'project',
-      imgPath: cicd,
+      imgPath: SecAssessment,
       title: t('project_security_hardening_title'),
       description: t('project_security_hardening_description'),
       skills: [
@@ -523,7 +533,7 @@ function Projects() {
     },
     {
       type: 'project',
-      imgPath: azure,
+      imgPath: FinOps,
       title: t('project_finops_platform_title'),
       description: t('project_finops_platform_description'),
       skills: [
@@ -540,7 +550,7 @@ function Projects() {
     },
     {
       type: 'project',
-      imgPath: cicd,
+      imgPath: Leadership,
       title: t('project_devops_leadership_title'),
       description: t('project_devops_leadership_description'),
       skills: [
@@ -580,7 +590,7 @@ function Projects() {
     },
   {
     type: 'project',
-    imgPath: nginx,
+    imgPath: Nginx2,
     title: t('project_nginx_title'),
     description: t('project_nginx_description'),
     skills: [
