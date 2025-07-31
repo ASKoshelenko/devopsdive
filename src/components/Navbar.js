@@ -5,8 +5,8 @@ import Container from "react-bootstrap/Container";
 import logo from "../Assets/logo.png";
 import { Link } from "react-router-dom";
 import { AiOutlineHome, AiOutlineFundProjectionScreen, AiOutlineUser } from "react-icons/ai";
-import { CgFileDocument } from "react-icons/cg";
-import { BsPencilSquare } from "react-icons/bs";
+// import { CgFileDocument } from "react-icons/cg";
+// import { BsPencilSquare } from "react-icons/bs";
 import { useTranslation } from 'react-i18next';
  
 
@@ -83,7 +83,7 @@ function NavBar() {
               </Nav.Link>
             </Nav.Item>
 
-            <Nav.Item>
+              {/* <Nav.Item>
               <Nav.Link as={Link} to="/blog" onClick={() => updateExpanded(false)}>
                 <BsPencilSquare style={{ marginBottom: "2px" }} /> {t("navbar_blog")}
               </Nav.Link>
@@ -93,7 +93,7 @@ function NavBar() {
               <Nav.Link as={Link} to="/resume" onClick={() => updateExpanded(false)}>
                 <CgFileDocument style={{ marginBottom: "2px" }} /> {t("navbar_resume")}
               </Nav.Link>
-            </Nav.Item>
+            </Nav.Item>  */}
           </Nav>
           {/* <Nav.Item>
             <Nav.Link onClick={() => changeLanguage('ua')}>
